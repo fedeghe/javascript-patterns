@@ -1,24 +1,6 @@
 /*
 https://en.wikipedia.org/wiki/Builder_pattern
-
-Definition
-The intent of the Builder design pattern is to separate the construction of a complex object from its representation. By doing so the same construction process can create different representations.[1]
-
-Advantages
-Advantages of the Builder pattern include:
-- Allows you to vary a product's internal representation.
-- Encapsulates code for construction and representation.
-- Provides control over steps of construction process.
-
-Disadvantages
-Disadvantages of the Builder pattern include:
-- Requires creating a separate ConcreteBuilder for each different type of product.
--  Requires the builder classes to be mutable.
-- Dependency injection may be less supported. 
-
  */
-
-
 
 function Stripe(color) {
     this.color = color;
@@ -40,7 +22,7 @@ function Tree() {
 }
 
 
-// createTwo builders for different trees
+// create two builders for different trees
 // 
 
 function treeBuilder1(){}
