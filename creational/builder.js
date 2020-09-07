@@ -1,28 +1,50 @@
+/*
+https://en.wikipedia.org/wiki/Builder_pattern
 
-		function Stripe(color) {
-			this.color = color;
-		}
+Definition
+The intent of the Builder design pattern is to separate the construction of a complex object from its representation. By doing so the same construction process can create different representations.[1]
 
-		function Light(color) {
-			this.color = color;
-		}
+Advantages
+Advantages of the Builder pattern include:
+- Allows you to vary a product's internal representation.
+- Encapsulates code for construction and representation.
+- Provides control over steps of construction process.
 
-		function Ball(color, size) {
-			this.color = color;
-			this.size = size;
-		}
+Disadvantages
+Disadvantages of the Builder pattern include:
+- Requires creating a separate ConcreteBuilder for each different type of product.
+-  Requires the builder classes to be mutable.
+- Dependency injection may be less supported. 
 
-		function Tree() {
-			this.stripes = [];
-			this.lights = [];
-			this.balls = [];
-		}
+ */
 
 
-// createTwo builders for different Tournaments
+
+function Stripe(color) {
+    this.color = color;
+}
+
+function Light(color) {
+    this.color = color;
+}
+
+function Ball(color, size) {
+    this.color = color;
+    this.size = size;
+}
+
+function Tree() {
+    this.stripes = [];
+    this.lights = [];
+    this.balls = [];
+}
+
+
+// createTwo builders for different trees
 // 
 
 function treeBuilder1(){}
+
 treeBuilder1.prototype.build = function () {
 	var t = new Tree();
 	t.stripes.push(new Stripe('red'));
@@ -55,15 +77,15 @@ treeBuilder2.prototype.build = function () {
 // now the director of builders
 //
 
-function TreeBuilder(){}
-TreeBuilder.prototype.build = function (b) {
+function Director(){}
+Director.prototype.build = function (b) {
 	return b.build();
 }
 
 
 // use
 // 
-var b1 = new TreeBuilder();
-console.dir(b1.build(new treeBuilder1()));
-console.dir(b1.build(new treeBuilder2()));
+var Dir = new Director();
+console.dir(Dir.build(new treeBuilder1()));
+console.dir(Dir.build(new treeBuilder2()));
 

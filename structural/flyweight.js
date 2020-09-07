@@ -1,6 +1,10 @@
+/*
+Intent 
+- Use sharing to support large numbers of fine-grained objects efficiently.
+- The Motif GUI strategy of replacing heavy-weight widgets with light-weight gadgets.
+*/
+
 // const util = require('util');
-
-
 
 function Application(name, price) {
 	this.name = name || '';
@@ -12,23 +16,21 @@ function Application(name, price) {
 var app1 = new Application('fb', 0),
 	app2 = new Application('tw', 0);
 	/*
-	
 	what if we have 1000 apps or more ?
-
 	*/
 
 
-function wfApplication(){}
-wfApplication.prototype.name = '';
-wfApplication.prototype.rate = 5;
-wfApplication.prototype.price = null;
+function fwApplication(){}
+fwApplication.prototype.name = '';
+fwApplication.prototype.rate = 5;
+fwApplication.prototype.price = null;
 
 var oneMillionApps = [],
 	oneMillionBadApps = [],
 	i = 0;
 
 for(i = 0; i < 1E6; i++) 
-	oneMillionApps.push(new wfApplication());
+	oneMillionApps.push(new fwApplication());
 
 // console.log(util.inspect(process.memoryUsage()));
 

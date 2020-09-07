@@ -1,35 +1,24 @@
 
 function FiatCar(){}
 FiatCar.prototype.startEngine = function (key) {
-	key.correct
-	&& console.log('prrrr');
+	key.correct && console.log('prrrr');
 }
-
 
 function AudiCar() {}
 AudiCar.prototype.startEngine = function (action) {
-	action.name == 'pushButton'
-	&& console.log('wrommmm');
+	action.name == 'pushButton' && console.log('wrommmm');
 };
 
 
 function FerrariCar() {}
 FerrariCar.prototype.startEngine = function (fingerPrint) {
-	fingerPrint.check()
-	&& console.log('WWWWWRRRRROOOOOOMMMMMMMMM');
+	fingerPrint.check() && console.log('WWWWWRRRRROOOOOOMMMMMMMMM');
 };
 
 function Key() {this.correct = true;}
 function Action() {this.name = 'pushButton';}
 function Fingerprint() {this.check = function (){return true;};}
 
-/*
-
-interface Car {
-	startEngine() :void;
-}
-
-*/
 
 
 function FiatCarAdapter() {
