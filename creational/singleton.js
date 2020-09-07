@@ -16,7 +16,7 @@ var God = (function () {
 		console.log('Thinking about undoing mankind!');
 	}
 
-	// static fucntion !!!
+	// static function !!!
 	God.getInstance = function () {
 		if (!God._instance)
 			God._instance = new God();

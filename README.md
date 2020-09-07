@@ -5,7 +5,7 @@
 - [x] **Builder**  
 - [x] **Factory method**  
 - [x] Lazy Initialization  
-- [ ] Multion  
+- [x] Multion  
 - [ ] Object pool  
 - [x] **Prototype**  
 - [ ] Resource aquisition is initialization (RAII)  
