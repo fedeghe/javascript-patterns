@@ -4,7 +4,7 @@
 - [x] **Abstract Factory**  
 - [x] **Builder**  
 - [x] **Factory method**  
-- [ ] Lazy Initialization  
+- [x] Lazy Initialization  
 - [ ] Multion  
 - [ ] Object pool  
 - [x] **Prototype**  
