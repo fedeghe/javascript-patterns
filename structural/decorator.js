@@ -1,3 +1,6 @@
+/*
+https://en.wikipedia.org/wiki/Decorator_pattern
+*/
 function Armor () {
 	this.integrity = 10;
 }

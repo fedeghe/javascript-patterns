@@ -1,5 +1,6 @@
-// recipe
-// 
+/*
+https://en.wikipedia.org/wiki/Composite_pattern
+*/
 
 function BasicIngredient(name, calories) {
 	this.name = name;

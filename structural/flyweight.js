@@ -1,11 +1,8 @@
 /*
-Intent 
-- Use sharing to support large numbers of fine-grained objects efficiently.
-- The Motif GUI strategy of replacing heavy-weight widgets with light-weight gadgets.
+https://en.wikipedia.org/wiki/Flyweight_pattern
 */
 
 // const util = require('util');
-
 function Application(name, price) {
 	this.name = name || '';
 	this.rate = 5;

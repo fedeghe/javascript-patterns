@@ -1,4 +1,6 @@
-
+/*
+https://en.wikipedia.org/wiki/Adapter_pattern
+*/
 function advancedCar(n) {
 	this.name = n;
 	this.direction = 0;

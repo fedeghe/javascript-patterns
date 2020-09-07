@@ -1,3 +1,6 @@
+/*
+https://en.wikipedia.org/wiki/Decorator_pattern
+*/
 var tree = {};
 tree.decorate = function () {
 	console.log('The tree is finished');

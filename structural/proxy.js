@@ -1,3 +1,6 @@
+/*
+https://en.wikipedia.org/wiki/Proxy_pattern
+*/
 function GeoCoder() {
 	this.getLatLng = function(address) {
 		var data = {

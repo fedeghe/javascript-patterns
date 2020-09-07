@@ -1,4 +1,6 @@
-
+/*
+https://en.wikipedia.org/wiki/Bridge_pattern
+*/
 function FiatCar(){}
 FiatCar.prototype.startEngine = function (key) {
 	key.correct && console.log('prrrr');
@@ -19,8 +21,6 @@ function Key() {this.correct = true;}
 function Action() {this.name = 'pushButton';}
 function Fingerprint() {this.check = function (){return true;};}
 
-
-
 function FiatCarAdapter() {
 	this._car = new FiatCar();	
 }
@@ -36,14 +36,12 @@ AudiCarAdapter.prototype.startEngine = function () {
 	this._car.startEngine(new Action());
 };
 
-
 function FerrariCarAdapter() {
 	this._car = new FerrariCar();	
 }
 FerrariCarAdapter.prototype.startEngine = function () {
 	this._car.startEngine(new Fingerprint());
 };
-
 
 
 var cars = [
