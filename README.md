@@ -18,10 +18,10 @@
 - [x] **Bridge**  
 - [x] **Composite**  
 - [x] **Decorator**  
-- [ ] **Delegation**  
+- [x] **Delegation**  
 - [x] **Façade**  
 - [x] **Flyweight**  
-- [ ] Front controller  
+- [x] Front controller  
 - [ ] Maker interface  
 - [ ] Module  
 - [x] **Proxy**  
