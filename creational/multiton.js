@@ -27,7 +27,7 @@ var m1 = new DbMultiton(1),
     m2 = new DbMultiton(2),
     m3 = new DbMultiton(3),
     m4 = new DbMultiton(4),
-    m5 = new DbMultiton(5)
+    m5 = new DbMultiton(5);
 
 console.log(m1)
 console.log(m2)
