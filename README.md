@@ -4,9 +4,9 @@
 - [x] **Abstract Factory**  
 - [x] **Builder**  
 - [x] **Factory method**  
-- [x] Lazy Initialization  
-- [x] Multion  
-- [ ] Object pool  
+- [x] **Lazy Initialization**  
+- [x] **Multion**  
+- [x] Object pool  
 - [x] **Prototype**  
 - [ ] Resource aquisition is initialization (RAII)  
 - [x] **Singleton**
@@ -21,7 +21,7 @@
 - [x] **Delegation**  
 - [x] **Façade**  
 - [x] **Flyweight**  
-- [x] Front controller  
+- [x] **Front controller**  
 - [ ] Maker interface  
 - [ ] Module  
 - [x] **Proxy**  
