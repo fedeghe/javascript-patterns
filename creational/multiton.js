@@ -1,33 +1,32 @@
-
-
-
-var DbMultiton = (function (maxInstances) {
+var DbMultiton = (function () {
     var instances = [],
+        maxInstances = 3;
 
-        //the class that needs to be under multiton
-        DatabaseConnection = function (n) {
-            this.db = 'connection # ' + n;
-        };
+    // the class that needs to be under multiton
+    function DatabaseConnection(key) {
+        this.db = 'connection # ' + key;
+    }
 
     // will be called as constructor thus must return a instance
-    return function (n) {
+    return function (k, or) {
         var instance;
+        or = (or || 0) % maxInstances;
         if (instances.length < maxInstances) {
-            instance = new DatabaseConnection(n);
+            instance = new DatabaseConnection(k);
             instances.push(instance);
         }
         else {
-            instance = instances[Math.floor(Math.random() * maxInstances)];
+            instance = instances[or];
         }
         return instance;
     }
-})(3);
+})();
 
 var m1 = new DbMultiton(1),
     m2 = new DbMultiton(2),
     m3 = new DbMultiton(3),
-    m4 = new DbMultiton(4),
-    m5 = new DbMultiton(5);
+    m4 = new DbMultiton(4, 1),
+    m5 = new DbMultiton(5, 2);
 
 console.log(m1)
 console.log(m2)
