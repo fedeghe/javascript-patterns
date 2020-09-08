@@ -51,10 +51,12 @@ Pool.prototype.get = function () {
 function Point(x, y) {
     this.x = x;
     this.y = y;
+    this.length = Math.sqrt(x*x + y*y)
 }
 Point.prototype.init = function (x, y) {
     this.x = x;
     this.y = y;
+    this.length = Math.sqrt(x*x + y*y)
 };
 
 // pool instance
@@ -79,6 +81,7 @@ try {
     console.log('now in any case we can get one')
     var s = myPool.get();
     s.init(10, 20)
+    console.log(s)
 }
 
 
