@@ -1,30 +1,30 @@
 ## CREATIONAL  
 
 
-- [x] **Abstract Factory**  
-- [x] **Builder**  
-- [x] **Factory method**  
-- [x] **Lazy Initialization**  
-- [x] **Multion**  
-- [x] Object pool  
-- [x] **Prototype**  
+- [x] [**Abstract Factory**](https://github.com/fedeghe/javascript-patterns/blob/master/creational/abstract_factory.js)  
+- [x] [**Builder**](https://github.com/fedeghe/javascript-patterns/blob/master/creational/builder.js)  
+- [x] [**Factory method**](https://github.com/fedeghe/javascript-patterns/blob/master/creational/factory_method.js)  
+- [x] [**Lazy Initialization**](https://github.com/fedeghe/javascript-patterns/blob/master/creational/lazy-initialization.js)  
+- [x] [**Multion**](https://github.com/fedeghe/javascript-patterns/blob/master/creational/multiton.js)  
+- [x] [**Object pool**](https://github.com/fedeghe/javascript-patterns/blob/master/creational/object-pool.js)  
+- [x] [**Prototype**](https://github.com/fedeghe/javascript-patterns/blob/master/creational/prototype.js)  
 - [ ] Resource aquisition is initialization (RAII)  
-- [x] **Singleton**
+- [x] [**Singleton**](https://github.com/fedeghe/javascript-patterns/blob/master/creational/singleton.js)
 
 ---
 
 ## STRUCTURAL
-- [x] **Adapter**  
-- [x] **Bridge**  
-- [x] **Composite**  
-- [x] **Decorator**  
-- [x] **Delegation**  
-- [x] **Façade**  
-- [x] **Flyweight**  
-- [x] **Front controller**  
+- [x] [**Adapter**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/adapter.js)  
+- [x] [**Bridge**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/bridge.js)  
+- [x] [**Composite**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/composite.js)  
+- [x] [**Decorator**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/decorator.js)  
+- [x] [**Delegation**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/delegation.js)  
+- [x] [**Façade**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/façade.js)  
+- [x] [**Flyweight**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/flyweight.js)  
+- [x] [**Front controller**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/front-controller.js)  
 - [ ] Maker interface  
 - [ ] Module  
-- [x] **Proxy**  
+- [x] [**Proxy**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/proxy.js)  
 - [ ] Twin  
 
 ---
@@ -32,20 +32,20 @@
 ## BEHAVIORAL 
 
 - [ ] Blackboard  
-- [x] **Chain of responsibility**  
-- [x] **Command**  
-- [x] **Interpreter**  
-- [x] **Iterator**  
-- [x] **Mediator**  
-- [x] **Memento**  
-- [ ] Null object  
-- [x] **Observer**  
+- [x] [**Chain of responsibility**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/chain-of-responsibility.js)  
+- [x] [**Command**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/command.js)  
+- [x] [**Interpreter**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/interpreter.js)  
+- [x] [**Iterator**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/iterator.js)  
+- [x] [**Mediator**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/mediator.js)  
+- [x] [**Memento**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/memento.js)  
+- [ ] Null object
+- [x] [**Observer**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/observer.js)  
 - [ ] Servant  
 - [ ] Specification  
-- [x] **State**  
-- [x] **Strategy**  
-- [x] **Template method**  
-- [x] **Visitor**
+- [x] [**State**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/state.js)  
+- [x] [**Strategy**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/strategy.js)  
+- [x] [**Template method**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/template-method.js)  
+- [x] [**Visitor**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/visitor.js)  
 
 ---
 
