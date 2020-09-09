@@ -1,51 +1,67 @@
-## CREATIONAL  
+## CREATIONAL  (Gof)
 
 
-- [x] [**Abstract Factory**](https://github.com/fedeghe/javascript-patterns/blob/master/creational/abstract_factory.js)  
-- [x] [**Builder**](https://github.com/fedeghe/javascript-patterns/blob/master/creational/builder.js)  
-- [x] [**Factory method**](https://github.com/fedeghe/javascript-patterns/blob/master/creational/factory_method.js)  
+### gof  
+- [x] [**Abstract Factory**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/creational/abstract_factory.js)  
+- [x] [**Builder**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/creational/builder.js)  
+- [x] [**Factory method**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/creational/factory_method.js)  
+- [x] [**Prototype**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/creational/prototype.js)  
+- [x] [**Singleton**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/creational/singleton.js)
+
+
+### others  
 - [x] [**Lazy Initialization**](https://github.com/fedeghe/javascript-patterns/blob/master/creational/lazy-initialization.js)  
 - [x] [**Multion**](https://github.com/fedeghe/javascript-patterns/blob/master/creational/multiton.js)  
 - [x] [**Object pool**](https://github.com/fedeghe/javascript-patterns/blob/master/creational/object-pool.js)  
-- [x] [**Prototype**](https://github.com/fedeghe/javascript-patterns/blob/master/creational/prototype.js)  
 - [ ] Resource aquisition is initialization (RAII)  
-- [x] [**Singleton**](https://github.com/fedeghe/javascript-patterns/blob/master/creational/singleton.js)
+
 
 ---
 
 ## STRUCTURAL
-- [x] [**Adapter**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/adapter.js)  
-- [x] [**Bridge**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/bridge.js)  
-- [x] [**Composite**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/composite.js)  
-- [x] [**Decorator**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/decorator.js)  
-- [x] [**Delegation**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/delegation.js)  
-- [x] [**Façade**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/façade.js)  
-- [x] [**Flyweight**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/flyweight.js)  
+
+### gof  
+- [x] [**Adapter**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/structural/adapter.js)  
+- [x] [**Bridge**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/structural/bridge.js)  
+- [x] [**Composite**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/structural/composite.js)  
+- [x] [**Decorator**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/structural/decorator.js)  
+- [x] [**Façade**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/structural/façade.js)  
+- [x] [**Flyweight**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/structural/flyweight.js)  
+- [x] [**Proxy**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/structural/proxy.js)  
+
+
+### others  
+
 - [x] [**Front controller**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/front-controller.js)  
 - [ ] Marker interface  
 - [ ] Module  
-- [x] [**Proxy**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/proxy.js)  
-- [ ] Twin  
+- [ ] Twin
 
 ---
 
 ## BEHAVIORAL 
 
+### gof  
+
 - [ ] Blackboard  
-- [x] [**Chain of responsibility**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/chain-of-responsibility.js)  
-- [x] [**Command**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/command.js)  
-- [x] [**Interpreter**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/interpreter.js)  
-- [x] [**Iterator**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/iterator.js)  
-- [x] [**Mediator**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/mediator.js)  
-- [x] [**Memento**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/memento.js)  
+- [x] [**Chain of responsibility**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/behavioral/chain-of-responsibility.js)  
+- [x] [**Command**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/behavioral/command.js)  
+- [x] [**Interpreter**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/behavioral/interpreter.js)  
+- [x] [**Iterator**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/behavioral/iterator.js)  
+- [x] [**Mediator**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/behavioral/mediator.js)  
+- [x] [**Memento**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/behavioral/memento.js)  
+- [x] [**Observer**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/behavioral/observer.js)  
+- [x] [**State**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/behavioral/state.js)  
+- [x] [**Strategy**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/behavioral/strategy.js)  
+- [x] [**Template method**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/behavioral/template-method.js)  
+- [x] [**Visitor**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/behavioral/visitor.js)  
+
+### others  
+
+- [ ] Blackboard  
 - [ ] Null object
-- [x] [**Observer**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/observer.js)  
 - [ ] Servant  
 - [ ] Specification  
-- [x] [**State**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/state.js)  
-- [x] [**Strategy**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/strategy.js)  
-- [x] [**Template method**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/template-method.js)  
-- [x] [**Visitor**](https://github.com/fedeghe/javascript-patterns/blob/master/behavioral/visitor.js)  
 
 ---
 
