@@ -22,7 +22,7 @@
 - [x] [**Façade**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/façade.js)  
 - [x] [**Flyweight**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/flyweight.js)  
 - [x] [**Front controller**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/front-controller.js)  
-- [ ] Maker interface  
+- [ ] Marker interface  
 - [ ] Module  
 - [x] [**Proxy**](https://github.com/fedeghe/javascript-patterns/blob/master/structural/proxy.js)  
 - [ ] Twin  
