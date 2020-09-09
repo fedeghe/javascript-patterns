@@ -9,7 +9,7 @@ var prototypize = (function () {
 
 var skateProto = {
     init: function (model, owner) {
-        this.modal = model;
+        this.model = model;
         this.owner = owner;
     }
 }
