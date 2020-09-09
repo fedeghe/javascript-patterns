@@ -43,7 +43,6 @@
 
 ### gof  
 
-- [ ] Blackboard  
 - [x] [**Chain of responsibility**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/behavioral/chain-of-responsibility.js)  
 - [x] [**Command**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/behavioral/command.js)  
 - [x] [**Interpreter**](https://github.com/fedeghe/javascript-patterns/blob/master/gof/behavioral/interpreter.js)  
