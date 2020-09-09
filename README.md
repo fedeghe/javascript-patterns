@@ -114,7 +114,7 @@
 
 ---
 
-## ARCHITECTORAL
+## ARCHITECTURAL
 
 - [ ] ADR
 - [ ] Active record
