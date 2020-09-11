@@ -137,7 +137,7 @@
 - [ ] Microservices
 - [ ] MVA
 - [ ] MVC
-- [X] [**MVP**](https://github.com/fedeghe/javascript-patterns/blob/master/architectural/mvp/MVP.js)
+- [X] [**MVP**](https://github.com/fedeghe/javascript-patterns/blob/master/architectural/MVP/MVP.js)
 - [ ] MVVM
 - [ ] Monolithic
 - [ ] Multitier
