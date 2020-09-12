@@ -73,7 +73,7 @@
 - [ ] Function composition
 - [ ] Functor
 - [ ] Generator
-- [ ] HOF
+- [x] [**HOF**](https://github.com/fedeghe/javascript-patterns/blob/master/functional/HOF.js)
 - [ ] Monad
 - [ ] Monoid
 
