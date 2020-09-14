@@ -14,22 +14,19 @@
 /**
  * since from the description what immediately matters is the size of the grid
  * I first implemented a reverse simple recursive algorithm, recongnising as 
- * exit condition the border, since when u reach the border, from there one
- * path is possible only 
+ * exit condition the border, since when u reach the border, from there (given
+ * the constraint about movement) only one path is possible
  */
 
-
- /**
-  * w here is meant to be the width , same for h is the height
-  */
-const scanNat = (w, h) => {
-    if (w === 1 || h === 1) return 1
+const scanWH = (w, h) => {
+    if (w === 0 || h === 0) return 1
     return scan(w - 1, h) + scan(w, h - 1)
 }
 
 // makes sense, pass dumb tests
-// looks like anyway point matters, also the starting one thus 
-// I wrote the version point friendly
+// looks like anyway Points matters, also the starting one thus 
+// I wrote the version Point friendly
+// Point = {x, y}
 //
 let scanCalls = 0
 const scan2 = (A, B) => {
@@ -40,19 +37,20 @@ const scan2 = (A, B) => {
 }
 
 /**
- * all good, ... mm ... not really
+ * all good, ... wouldn't exactly say so
  * ok ...results are correct but if u try to raise the line a bit
- * it literally explodes
- * for example the scan function on the middle point of a squared grind
+ * it literally explodes.
+ * For example the scan function on the middle point of a squared grind
  * will be called as many time as there are paths passing there... dingg
  * yes ...memoization makes it not only a way faster, but also does not 
- * fill up the memory with an inredible number of unneeded calls
- * since it just call the scan O(grindArea) ... with c = 1
+ * fill up the memory with an incredible number of unneeded calls
+ * since it just trigger the scan function O(grindArea) ... with c = 1
+ * thus we can say this is O(n) in space+time complexity
  */
 
 const memoizedNumberOfPaths = (A, B) => {
     let calculations = 0;
-    const memo = {},
+    const memo = {}, // O(area)
         scan = (A, B) => {
             if ((B.x === A.x) || (B.y === A.y)) return 1;
             return memoized(A, { x: B.x, y: B.y - 1 })
@@ -63,7 +61,7 @@ const memoizedNumberOfPaths = (A, B) => {
             const k = [A.x, A.y, B.x, B.y].join('-');
             if (!(k in memo)) {
                 calculations++;
-                memo[k] = scan(A, B);
+                memo[k] = scan(A, B); // O (area)
             }
             return memo[k];
         }
