@@ -70,12 +70,12 @@
 - [ ] Comonad
 - [ ] Currying
 - [ ] Free monad
-- [ ] Function composition
+- [x] [**Function composition**](https://github.com/fedeghe/javascript-patterns/blob/master/functional/function_composition.js)
 - [ ] Functor
 - [ ] Generator
 - [x] [**HOF**](https://github.com/fedeghe/javascript-patterns/blob/master/functional/HOF.js)
 - [ ] Monad
-- [ ] Monoid
+- [x] [**Monoid**](https://github.com/fedeghe/javascript-patterns/blob/master/functional/monoid.js)
 
 ---
 
