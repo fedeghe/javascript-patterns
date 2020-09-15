@@ -104,28 +104,30 @@ const iterative = (A, B) => {
  * Another optimization is to write an interative version
  * and also  WAIT !!!
  * 
- 
-    o
-    | o
-    |   o
-    |     o
-    |       o
-    |         o
-    |           o
-    |             o
-    +---+---+---+---o
-    | 1 | 4 | 10| 20|  o
-    +---+---+---+---+    o
-    | 1 | 3 | 6 | 10|      o
-    +---+---+---+---+        o
-    | 1 | 2 | 3 | 4 |          o
-    +---+---+---+---+            o
-    | 1 | 1 | 1 | 1 |              o
-    +---+---+---+---+----------------o
+     o
+    |  o
+    | 1  o
+    |      o
+    | 1   7  o
+    |          o
+    | 1   6   21 o
+    |              o
+    | 1   5   15  35 o
+    +---+---+---+---+  o
+    | 1 | 4 | 10| 20| 35 o
+    +---+---+---+---+      o
+    | 1 | 3 | 6 | 10| 15  21 o
+    +---+---+---+---+          o
+    | 1 | 2 | 3 | 4 | 5   6   7  o
+    +---+---+---+---+              o
+    | 1 | 1 | 1 | 1 | 1   1   1   1  o
+    +---+---+---+---+------------------o
 
- * check again the square I drew, and fill it reminds you something?
+ * check again the square I have drawn, and fill it putting in each elements
+ * the number of path that can get there, starting from A.... now imagine to turn it 135 deg CW ...  that reminds you something?
  * Tartaglia ? or Pascal triangle? 
- * thus there is most likely even a smarter solution to that
+ * also we need to calculate only a subsection of it, the one that arrives at our result             
+ * building that is quite naive
  * 
  * looking at the numbers it seem like a winner
  */
@@ -164,7 +166,7 @@ const calcPascalTriangle = (A, B) => {
     //     }
     // }
 
-    //or better
+    // or better
     while(xCursor < x) addColumn();
     while(yCursor < y) addRow();
 
