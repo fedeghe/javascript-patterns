@@ -107,22 +107,6 @@ module.exports = {
     memoizedNumberOfPaths
 }
 
-
-// const A = { x: 0, y: 0 },
-//     B = { x: 10, y: 10 };
-
-// console.time('memoizedNumberOfPaths')
-// const r1 = memoizedNumberOfPaths(A, B)
-// console.timeEnd('memoizedNumberOfPaths')
-// console.log(r1)
-
-
-// console.time('scan2')
-// const r2 = scan2(A, B)
-// console.timeEnd('scan2')
-// console.log(r2)
-
-
 /**
  * Anther optimization is to write an interative version
  */
