@@ -27,7 +27,7 @@
 
 /**
  * since from the description what immediately matters is the size of the grid
- * I first implemented a reverse simple recursive algorithm, recongising as 
+ * I first implemented a reverse simple recursive algorithm, recognising as 
  * exit condition the border, since when u reach the border, from there (given
  * the constraint about movement) only one path is possible
  */
@@ -37,11 +37,6 @@ const scan0 = (w, h) => {
     return scan0(w - 1, h) + scan0(w, h - 1)
 }
 
-const scan1 = (A, B) => (function scanI(w, h) {
-    if (w === 0 || h === 0) return 1
-    return scanI(w - 1, h) + scanI(w, h - 1)
-})(B.x - A.x, B.y - A.y)
-    
 
 
 // makes sense, pass dumb tests
@@ -50,6 +45,12 @@ const scan1 = (A, B) => (function scanI(w, h) {
 // Point = {x, y}
 //
 // let scanCalls = 0
+
+const scan1 = (A, B) => (function scanI(w, h) {
+    if (w === 0 || h === 0) return 1
+    return scanI(w - 1, h) + scanI(w, h - 1)
+})(B.x - A.x, B.y - A.y)
+// or almost equivalent
 const scan2 = (A, B) => {
     // scanCalls++;
     if ((B.x === A.x) || (B.y === A.y)) return 1
@@ -78,7 +79,7 @@ const memoizedNumberOfPaths = (A, B) => {
                 + memoized(A, { x: B.x - 1, y: B.y });
         },
         memoized = (A, B) => {
-            // no, I could not imaging a better collision-proof key! 
+            // no, I could not imagine a better collision-proof key! 
             const k = [A.x, A.y, B.x, B.y].join('-');
             if (!(k in memo)) {
                 // calculations++;
