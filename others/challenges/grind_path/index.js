@@ -13,12 +13,14 @@
 /*
 
 
-    +---+---+---+---.  4 + 6 
-    | 1 | 3 | 6 | B |
     +---+---+---+---+
-    | 1 | 2 | 3 | 4 |
+    |   |   |   | B |
     +---+---+---+---+
-    | A | 1 | 1 | 1 |
+    |   |   |   |   |
+    +---+---+---+---+
+    |   |   |   |   |
+    +---+---+---+---+
+    | A |   |   |   |
     +---+---+---+---+
 
 */
@@ -129,7 +131,7 @@ module.exports = {
 
  /**
   * WAIT
-  * check again the square I drew, reminds you something?
+  * check again the square I drew, and fill it reminds you something?
   * Tartaglia ? or Pascal triangle? 
   * thus there is most likely even a smarter solution to that
   */
