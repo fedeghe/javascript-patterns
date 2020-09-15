@@ -50,6 +50,7 @@ const scan1 = (A, B) => (function scanI(w, h) {
     if (w === 0 || h === 0) return 1
     return scanI(w - 1, h) + scanI(w, h - 1)
 })(B.x - A.x, B.y - A.y)
+
 // or almost equivalent
 const scan2 = (A, B) => {
     // scanCalls++;
@@ -87,8 +88,8 @@ const memoizedNumberOfPaths = (A, B) => {
             }
             return memo[k];
         }
-        
-    const res =  memoized(A, B);
+
+    const res = memoized(A, B);
     // console.log('Total calls: ' +  calculations);
     return res;
 }
@@ -99,24 +100,84 @@ const iterative = (A, B) => {
 }
 
 
+/**
+ * Another optimization is to write an interative version
+ * and also  WAIT !!!
+ * 
+ 
+    o
+    | o
+    |   o
+    |     o
+    |       o
+    |         o
+    |           o
+    |             o
+    +---+---+---+---o
+    | 1 | 4 | 10| 20|  o
+    +---+---+---+---+    o
+    | 1 | 3 | 6 | 10|      o
+    +---+---+---+---+        o
+    | 1 | 2 | 3 | 4 |          o
+    +---+---+---+---+            o
+    | 1 | 1 | 1 | 1 |              o
+    +---+---+---+---+----------------o
+
+ * check again the square I drew, and fill it reminds you something?
+ * Tartaglia ? or Pascal triangle? 
+ * thus there is most likely even a smarter solution to that
+ * 
+ * looking at the numbers it seem like a winner
+ */
+
+const calcPascalTriangle = (A, B) => {
+    let xCursor = 0,
+        yCursor = 0;
+    const x = B.x - A.x,
+        y = B.y - A.y,
+        pTri = [[1]],
+        addColumn = () => {
+            for (let i = 0, l = pTri.length; i < l; i++) {
+                pTri[i].push(i === 0 ? 1 : pTri[i - 1][l] + pTri[i][l - 1]);
+            }
+            ++xCursor;
+        },
+        addRow = () => {
+            pTri[yCursor + 1] = [1];
+            for (let i = 1, l = pTri[0].length; i < l; i++) {
+                pTri[yCursor + 1].push(pTri[yCursor][i] + pTri[yCursor + 1][i - 1]);
+            }
+            ++yCursor;
+        };
+    
+    // while (xCursor < x || yCursor < y) {
+    //     let goX = xCursor < x,
+    //         goY = yCursor < y;
+    //     if (goX && goY) {
+    //         addColumn();
+    //         addRow();
+    //     }
+    //     else if (goX) {
+    //         addColumn();
+    //     } else if (goY) {
+    //         addRow();
+    //     }
+    // }
+
+    //or better
+    while(xCursor < x) addColumn();
+    while(yCursor < y) addRow();
+
+    // console.log(pTri)
+    return pTri[y][x];
+}
+
+
 
 module.exports = {
     scan0,
     scan1,
     scan2,
-    memoizedNumberOfPaths
-}
-
-/**
- * Anther optimization is to write an interative version
- */
-
-
-
-
- /**
-  * WAIT
-  * check again the square I drew, and fill it reminds you something?
-  * Tartaglia ? or Pascal triangle? 
-  * thus there is most likely even a smarter solution to that
-  */
+    memoizedNumberOfPaths,
+    calcPascalTriangle
+};
