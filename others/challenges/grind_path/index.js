@@ -12,19 +12,14 @@
 
 /*
 
-    +---+---+---+---+---+---+---+---+
-    |   |   |   |   |   |   |   | B |
-    +---+---+---+---+---+---+---+---+
-    |   |   |   |   |   |   |   |   |
-    +---+---+---+---+---+---+---+---+
-    |   |   |   |   |   |   |   |   |
-    +---+---+---+---+---+---+---+---+
-    |   |   |   |   |   |   |   |   |
-    +---+---+---+---+---+---+---+---+
-    |   |   |   |   |   |   |   |   |
-    +---+---+---+---+---+---+---+---+
-    | A |   |   |   |   |   |   |   |
-    +---+---+---+---+---+---+---+---+
+
+    +---+---+---+---.  4 + 6 
+    | 1 | 3 | 6 | B |
+    +---+---+---+---+
+    | 1 | 2 | 3 | 4 |
+    +---+---+---+---+
+    | A | 1 | 1 | 1 |
+    +---+---+---+---+
 
 */
 
@@ -96,6 +91,12 @@ const memoizedNumberOfPaths = (A, B) => {
 }
 
 
+const iterative = (A, B) => {
+
+}
+
+
+
 module.exports = {
     scan0,
     scan1,
@@ -122,3 +123,13 @@ module.exports = {
 /**
  * Anther optimization is to write an interative version
  */
+
+
+
+
+ /**
+  * WAIT
+  * check again the square I drew, reminds you something?
+  * Tartaglia ? or Pascal triangle? 
+  * thus there is most likely even a smarter solution to that
+  */
