@@ -151,30 +151,11 @@ const calcPascalTriangle = (A, B) => {
             }
             ++yCursor;
         };
-    
-    // while (xCursor < x || yCursor < y) {
-    //     let goX = xCursor < x,
-    //         goY = yCursor < y;
-    //     if (goX && goY) {
-    //         addColumn();
-    //         addRow();
-    //     }
-    //     else if (goX) {
-    //         addColumn();
-    //     } else if (goY) {
-    //         addRow();
-    //     }
-    // }
 
-    // or better
     while(xCursor < x) addColumn();
     while(yCursor < y) addRow();
-
-    // console.log(pTri)
     return pTri[y][x];
-}
-
-
+};
 
 module.exports = {
     scan0,
