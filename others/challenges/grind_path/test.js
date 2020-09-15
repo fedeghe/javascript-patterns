@@ -42,40 +42,23 @@ const benchmark = [{
     },output: 184756
 }]
 
-console.log(`\n\n TESTS\n\n`)
-const line = () => console.log("\n")
+console.log(`\n\n TESTS\n\n`);
+const line = () => console.log('\n');
 
-console.time('memoizedNumberOfPaths');
-benchmark.forEach(bm => assert.strictEqual(memoizedNumberOfPaths(bm.input.A, bm.input.B), bm.output))
-console.log('✅ memoizedNumberOfPaths passed ') 
-console.timeEnd('memoizedNumberOfPaths')
+[memoizedNumberOfPaths, scan1, scan2, calcPascalTriangle].forEach(strategy => {
+    let name = strategy.name;
+    console.time(name);
+    benchmark.forEach(bm => assert.strictEqual(strategy(bm.input.A, bm.input.B), bm.output));
+    console.log('✅ ')
+    console.timeEnd(name);
+    line();
+})
 
-line();
 
-console.time('scan0');
-benchmark.forEach(bm => assert.strictEqual(scan0(bm.input.B.x, bm.input.B.y), bm.output))
-console.log('✅ scan0 passed ') 
-console.timeEnd('scan0')
 
-line();
+// console.time('scan0');
+// benchmark.forEach(bm => assert.strictEqual(scan0(bm.input.B.x, bm.input.B.y), bm.output))
+// console.log('✅ scan0 passed ') 
+// console.timeEnd('scan0')
 
-console.time('scan1');
-benchmark.forEach(bm => assert.strictEqual(scan1(bm.input.A, bm.input.B), bm.output))
-console.log('✅ scan1 passed ') 
-console.timeEnd('scan1')
-
-line();
-
-console.time('scan2');
-benchmark.forEach(bm => assert.strictEqual(scan2(bm.input.A, bm.input.B), bm.output))
-console.log('✅ scan2 passed ');
-console.timeEnd('scan2')
-
-line();
-
-console.time('calcPascalTriangle');
-benchmark.forEach(bm => assert.strictEqual(calcPascalTriangle(bm.input.A, bm.input.B), bm.output))
-console.log('✅ calcPascalTriangle passed ')
-console.timeEnd('calcPascalTriangle') 
-
-line();
+// line();
