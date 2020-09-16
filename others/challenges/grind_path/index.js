@@ -120,10 +120,9 @@ const memoizedNumberOfPaths = (A, B) => {
  * check again the square I have drawn, and fill it putting in each elements
  * the number of path that can get there, starting from A.... now imagine to turn it 135 deg CW ...  that reminds you something?
  * Tartaglia ? or Pascal triangle? 
- * also we need to calculate only a subsection of it, the one that arrives at our result             
- * building that is quite naive
  * 
- * looking at the numbers it seem like a winner
+ * also we need to calculate only a subsection of it, the one that arrives at our result             
+ * a bidimensional array fits and building that is quite naive
  */
 
 const calcPascalTriangle = (A, B) => {
@@ -150,6 +149,17 @@ const calcPascalTriangle = (A, B) => {
     while(yCursor < y) addRow();
     return pTri[y][x];
 };
+/**
+ * 
+ * now we can run some test on 2,3,4,9,11,16 sized grinds
+ * do not try to push too much there cause, at least
+ * without excluding the recusive non memoized algorithms
+ * 
+ * > node test.js
+ * 
+ * looking at the numbers the `calcPascalTriangle` seems like a clear winner
+ * 
+ */
 
 module.exports = {
     scan0,

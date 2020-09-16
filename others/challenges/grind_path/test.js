@@ -60,7 +60,7 @@ const benchmark = [{
     },output: 6
 }]
 
-console.log(`\n\n 🍌 🍌 🍌  T E S T S 🍌 🍌 🍌 \n`);
+console.log(`\n\n 🍌 🍌 🍌  T E S T S  🍌 🍌 🍌 \n`);
 const line = () => console.log('\n');
 console.time('total running time');
 
