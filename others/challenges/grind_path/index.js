@@ -94,12 +94,6 @@ const memoizedNumberOfPaths = (A, B) => {
     return res;
 }
 
-
-const iterative = (A, B) => {
-
-}
-
-
 /**
  * Another optimization is to write an interative version
  * and also  WAIT !!!
