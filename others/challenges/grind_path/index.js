@@ -161,10 +161,70 @@ const calcPascalTriangle = (A, B) => {
  * 
  */
 
+
+ /** but ...let's make one step back, thing now should look simpler
+     in the end it is just a matter of calculating the value that has
+     to be in that corner of the 'pascal square' subsection of the triangle
+
+     this on the 'small' sizes seem to be the fastest
+ */
+const getBc = (A, B) => {
+    let x = B.x - A.x,
+        y = B.y - A.y,
+        a1 = new Array(x).fill(1),
+        a2 = [];
+    while(y--) {
+        a2 = [1];
+        for (let i = 0; i < x; i++) {
+            a2.push(a2[i] + (a1[i+1] || 1))
+        }
+        a1 = a2
+    }
+    return a1[x]
+}
+
+
+ /**
+  * not yet :D 
+  * enven only scratching the surface of https://en.wikipedia.org/wiki/Pascal%27s_triangle
+  * I'm curious to see if the binomial coefficiant calculation can be done so that it runs even faster
+  */
+
+// no ....I wont use it, at that point I cannot use recursion
+const fact = n => n <= 1 ? 1 : n * fact(n-1),
+    binCoeff = (n, k) => fact(n) / (fact(k) * fact(n-k)),
+    bcBased1 = (A, B) => {
+        let x = B.x - A.x,
+            y = B.y - A.y;
+        return binCoeff(x+y, y)
+    };
+
+
+// there is a better interative way to get bc
+// revisiting a solution from SO https://stackoverflow.com/questions/37679987/efficient-computation-of-n-choose-k-in-node-js
+// we have a better way to get the Binomial Coefficient
+const chooseei = (n, k) => {
+        let res = 1;
+        while (k >= 1)
+            res *= (n + 1 - k) / k--; //as you might expect the division has consequences, can be handled
+        return res;
+    },
+    bcBased2 = (A, B) => {
+        let x = B.x - A.x,
+            y = B.y - A.y;
+        return ~~chooseei(x+y, y) // ~~ handle consequences rounding (this is fast the payoff is to touch the int bound one digit earlier)
+    };
+
+
+// test on my machine says this is the winner
+// for the moment can be enough :D
+
 module.exports = {
     scan0,
     scan1,
     scan2,
+    bcBased2,
+    getBc,
     memoizedNumberOfPaths,
     calcPascalTriangle
 };
