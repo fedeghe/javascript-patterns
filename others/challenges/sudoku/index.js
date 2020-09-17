@@ -15,10 +15,38 @@
 8   |   9   |       | 4     |
     +-+-+-+-+-+-+-+-+-+-+-+-+
 
+
+    o-+-+-+-+-+-+-+-+-+-+-+-+
+0   | 8     |       |       |
+1 r |     3 | 6     |       |
+2   |   7   |   9   | 2     |
+    +-+-+-+-+-+-+-+-+-+-+-+-+
+3   |   5   |     7 |       |
+4   |       |   4 5 | 7     |
+5   |   6   | 1     |   3   |
+    +-+-+-+-+-+-+-+-+-+-+-+-+
+6   |     1 |       |   6 8 |
+7   |     8 | 5     |   1   |
+8   |   9   |       | 4     |
+    +-+-+-+-+-+-+-+-+-+-+-+-+
+
+checks to eliminate possibilities
+1st level
+- quad: within a quad a set number must be removed from others 
+        quad elements possibilities
+- row: within a row a set number must be removed from others 
+        row elements possibilities
+- line: within a line a set number must be removed from others 
+        line elements possibilities
+2nd level
+- within a quad horizontal or vertical triple, let think vertical (horizontal is similar)
+  if within a quad a number is at least only present twice in a column
+  then should be removed from the possibilities of the other columns in the triple
 */
 
-const getColumn = (M, c) => 
-    M.reduce(
+
+
+const getColumn = (M, c) =>  M.reduce(
         (acc, row) => { acc.push(row[c]); return acc; }
     , []),
 
@@ -34,10 +62,6 @@ const getColumn = (M, c) =>
                 res[i-r].push(M[i][j])
             }
         }
-        // console.log('quad ', r, c)
-        // console.log(res)
-        // console.log('========')
-        // console.log('')
         return res;
     },
 
@@ -52,15 +76,13 @@ const getColumn = (M, c) =>
     ].map(point => getQuad(M, point[0], point[1])),
 
     removeFromQuad = (quad, value) => {
-        // const quad = getQuad(P, r, c)
         quad.forEach(row => 
             Array.isArray(row) && 
             row.forEach(col => {
-                col[value - 1] = false
+                col[value - 1] = false;
             })
         )
     },
-
 
     quadCheck = (quad, i) => {
         const count = arrayOf(9, () => 0)
@@ -68,7 +90,7 @@ const getColumn = (M, c) =>
             row.forEach(cellPoss => {
                 if (Array.isArray(cellPoss)) {
                     cellPoss.forEach(n => {
-                        n && count[n-1]++
+                        n && count[n-1]++;
                     })
                 }
             })            
@@ -76,29 +98,20 @@ const getColumn = (M, c) =>
         
         count.forEach((n, v) => {
             if (n === 1) {
-                // console.log(quad, v+1, i)
-                // console.log("\n\n\n\n\n\n\n")
-                lookupInQuad(quad, v+1, i)
+                lookupInQuad(quad, v+1, i);
             }
         })
-
     },
 
     lookupInQuad = (quad, value, quadNum) => {
         quad.forEach((row, ir) => {
             row.forEach((cellPoss, ic) => {
                 if (Array.isArray(cellPoss) && cellPoss.includes(value)) {
-                    
-                    // console.log(`quadrand ${quadNum} must have ${value} in cell [${ir}, ${ic}]`);
                     console.log(`cell [${Math.floor(quadNum / 3)*3 + ir}, ${(quadNum % 3)*3 + ic}] should contain ${value}`);
-                    
-
-                    // console.log(`cell [${ir + Math.floor(quadNum / 3)}, ${ic + Math.floor(quadNum / 3)*3}] must contain ${value}`);
-                    // console.log("++++++++\n\n\n\n\n\n\n\n\n\n\n\n\n")
                 }
             })            
         })
-    }
+    },
 
     removeFromRow = (P, r, value) => {
         const row = getRow(P, r)
@@ -119,24 +132,36 @@ const getColumn = (M, c) =>
         })
     },
 
+    removeFromQuad = (quad, value) => {
+        quad.forEach((row, ir) => {
+            row.forEach((cellPoss, ic) => {
+                if (Array.isArray(cellPoss) && cellPoss.includes(value)) {
+                    cellPoss[value - 1] = false
+                }
+            })            
+        })
+    },
+
+    checkTripleRows = P => {
+        // [1,2,3,4,5,6,7,8,9].forEach(value => {
+
+        // })
+    },
+
+    checkTripleColumns = P => {
+
+    },
+
     scan = M => {
         const possibles = getPossibleTpl(M),
             quads = getAllQuads(possibles);
-        // console.log("\n\n\n\n\n\n\n\n\nquads")
-        // console.log(quads)
 
         quads.forEach(quad => {
-            
-            // console.log('\n\n\nquad')
-            // console.log(quad)
-
             let nums = quad.reduce((acc, row) => {
                 acc = acc.concat(row.filter(Number))
                 return acc
             }, []);
-            // console.log(nums)
             nums.forEach(num => removeFromQuad(quad, num))
-            
         });
 
         possibles.forEach((row, ir) => {
@@ -147,45 +172,14 @@ const getColumn = (M, c) =>
                 }
             })
         })
-        quads.forEach((quad, i) => quadCheck(quad, i))
+        checkTripleRows(possibles);
+        checkTripleColumns(possibles);
 
-
-
-
-
-        // console.dir(possibles)
-        
-
-        // possibles.forEach((row, ri) => row.forEach((cellPoss, ci) => {
-        //     if (typeof cellPoss !== 'number') {
-        //         let t = cellPoss.filter(Boolean);
-        //         // console.log(`${ri},${ci} => ${cellPoss}\n\n`)
-        //         if (t.length === 1) {
-        //             console.log(ri, ci, t[0])
-        //         }
-        //     }
-        // }))
-
-
-
-
-        // console.log(getQuad(possibles, 3, 0))
-        // console.log('quads')
-        // console.log(quads)
-        // quads.forEach(quad => {
-        //     console.dir(quad);
-        //     [1,2,3,4,5,6,7,8,9].forEach(n => {
-        //         let count = 0;
-
-        //     })
-        // })
-
-
+        quads.forEach((quad, i) => quadCheck(quad, i));
 
         return {
             possibles
-        }
-
+        };
     };
 
 
