@@ -216,7 +216,6 @@ const chooseei = (n, k) => {
     };
 
 
-// test on my machine says this is the winner
 // for the moment can be enough :D
 
 module.exports = {
