@@ -96,33 +96,36 @@ const memoizedNumberOfPaths = (A, B) => {
 
 /**
  * Another optimization is to write an interative version
- * and also  WAIT !!!
- * 
-     o
-    |  o
-    | 1  o
-    |      o
-    | 1   7  o
-    |          o
-    | 1   6   21 o
-    |              o
-    | 1   5   15  35 o
-    +---+---+---+---+  o
-    | 1 | 4 | 10| 20| 35 o
-    +---+---+---+---+      o
-    | 1 | 3 | 6 | 10| 15  21 o
-    +---+---+---+---+          o
-    | 1 | 2 | 3 | 4 | 5   6   7  o
-    +---+---+---+---+              o
-    | 1 | 1 | 1 | 1 | 1   1   1   1  o
-    +---+---+---+---+------------------o
-
- * check again the square I have drawn, and fill it putting in each elements
+ * and also ... wait 
+ * let's draw again the square, and fill it putting in each elements
  * the number of path that can get there, starting from A.... now imagine to turn it 135 deg CW ...  that reminds you something?
- * Tartaglia ? or Pascal triangle? 
  * 
- * also we need to calculate only a subsection of it, the one that arrives at our result             
- * a bidimensional array fits and building that is quite naive
+     .
+    |  .
+    | 1  .
+    |      .
+    | 1   7  .
+    |          .
+    | 1   6   21 .
+    |              .
+    | 1   5   15  35 .
+    +---+---+---+---B  .
+    | 1 | 4 | 10| 20| 35 .
+    +---+---+---+---+      .
+    | 1 | 3 | 6 | 10| 15  21 .
+    +---+---+---+---+          .
+    | 1 | 2 | 3 | 4 | 5   6   7  .
+    +---+---+---+---+              .
+    | 1 | 1 | 1 | 1 | 1   1   1   1  .
+    A---+---+---+---+------------------.
+
+ 
+ * 'il triangolo di Tartaglia' best known as `Pascal triangle`?
+ * 
+ * also we need to calculate only a subsection of it
+ * the one that arrives at our result             
+ * a bidimensional array fits perfect and
+ * building that is quite naive
  */
 
 const calcPascalTriangle = (A, B) => {
@@ -145,28 +148,31 @@ const calcPascalTriangle = (A, B) => {
             ++yCursor;
         };
 
-    while(xCursor < x) addColumn();
-    while(yCursor < y) addRow();
+    while (xCursor < x) addColumn();
+    while (yCursor < y) addRow();
     return pTri[y][x];
 };
 /**
  * 
- * now we can run some test on 2,3,4,9,11,16 sized grinds
- * do not try to push too much there cause, at least
- * without excluding the recusive non memoized algorithms
+ * now we can run some test almost not taking much care about the size
+ * ( as far as the result is below Number.MAX_VALUE (or Number.MAX_SAFE_INTEGER if we need the right result)
+ * the test.js anyway is not pushing much here cause still it is running some recursive unoptimized approaches 
+ * which would simply freeze Your machine if calle even on 50 squared grinds
  * 
  * > node test.js
  * 
  * looking at the numbers the `calcPascalTriangle` seems like a clear winner
  * 
- */
-
-
- /** but ...let's make one step back, thing now should look simpler
-     in the end it is just a matter of calculating the value that has
-     to be in that corner of the 'pascal square' subsection of the triangle
-
-     this on the 'small' sizes seem to be the fastest
+ * 
+ * 
+ * 
+ * 
+ * but ...let's make one step back, thing now should look simpler
+ * in the end it is just a matter of calculating the value that has
+ * to be in that corner of the 'pascal square' subsection of the triangle
+ * two arrays are enough
+ * 
+ * this on the 'small' sizes seem to be the fastest
  */
 const getBc = (A, B) => {
     let x = B.x - A.x,
@@ -185,9 +191,9 @@ const getBc = (A, B) => {
 
 
  /**
-  * not yet :D 
+  * Maybe we're not yet there
   * enven only scratching the surface of https://en.wikipedia.org/wiki/Pascal%27s_triangle
-  * I'm curious to see if the binomial coefficiant calculation can be done so that it runs even faster
+  * I'm curious to see if the binomial coefficient calculation can be done so that it runs even faster
   */
 
 // no ....I wont use it, at that point I cannot use recursion
@@ -203,20 +209,28 @@ const fact = n => n <= 1 ? 1 : n * fact(n-1),
 // there is a better interative way to get bc
 // revisiting a solution from SO https://stackoverflow.com/questions/37679987/efficient-computation-of-n-choose-k-in-node-js
 // we have a better way to get the Binomial Coefficient
-const chooseei = (n, k) => {
+const binomial = (n, k) => {
         let res = 1;
         while (k >= 1)
-            res *= (n + 1 - k) / k--; //as you might expect the division has consequences, can be handled
+            res *= (n + 1 - k) / k--; // as you might expect the division has consequences,
+                                      // but can be handled on smaller numbers
         return res;
     },
     bcBased2 = (A, B) => {
         let x = B.x - A.x,
             y = B.y - A.y;
-        return ~~chooseei(x+y, y) // ~~ handle consequences rounding (this is fast the payoff is to touch the int bound one digit earlier)
+        return ~~binomial(x+y, y) // ~~ handle consequences rounding. This is a fast rounding,
+                                  // the payoff is to touch the int bound one digit earlier
     };
 
+/**
+ * Conclusion
+ * - memoizedNumberOfPaths is quite fast, also considering that is recursive
+ * - calcPascalTriangle is really fast on all sizes
+ * - bdBased2 && getBC are the fastest on smaller sizes (~ < 15)
+ * - recursive non memoized approaches are slow and inclredibly time consuming
+ */
 
-// for the moment can be enough :D
 
 module.exports = {
     scan0,
