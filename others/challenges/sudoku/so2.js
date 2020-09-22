@@ -30,7 +30,7 @@ const _board2 = [
     [s, s, s, s, s, s, s, s, s],
 ]
 console.time('wts2020')
-sodokoSolver(_board);
+sudokuSolver(_board);
 print(_board);
 console.timeEnd('wts2020')
 
@@ -45,14 +45,19 @@ function isValid(board, row, col, k) {
     return true;
 }
 
-function sodokoSolver(data) {
+function sudokuSolver(data) {
     for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++) {
             if (data[i][j] == s) {
                 for (let k = 1; k <= 9; k++) {
+                    
+                    // excluding from this step those not possible
+                    // checking row, col and block
+                    // does not pay in term of time, maybe only in memory
+
                     if (isValid(data, i, j, k)) {
                         data[i][j] = k;
-                        if (sodokoSolver(data)) {
+                        if (sudokuSolver(data)) {
                             return true;
                         } else {
                             data[i][j] = s;
