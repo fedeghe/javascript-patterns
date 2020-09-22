@@ -4,35 +4,52 @@
  */
 
 
-const s = ' ';
+const s = '.';
 
-const _board = [
-    [8, s, s, s, s, s, s, s, s],
-    [s, s, 3, 6, s, s, s, s, s],
-    [s, 7, s, s, 9, s, 2, s, s],
-    [s, 5, s, s, s, 7, s, s, s],
-    [s, s, s, s, 4, 5, 7, s, s],
-    [s, s, s, 1, s, s, s, 3, s],
-    [s, s, 1, s, s, s, s, 6, 8],
-    [s, s, 8, 5, s, s, s, 1, s],
-    [s, 9, s, s, s, s, 4, s, s],
-]
+const boards = {
+    wts2020: [
+        [8, s, s, s, s, s, s, s, s],
+        [s, s, 3, 6, s, s, s, s, s],
+        [s, 7, s, s, 9, s, 2, s, s],
+        [s, 5, s, s, s, 7, s, s, s],
+        [s, s, s, s, 4, 5, 7, s, s],
+        [s, s, s, 1, s, s, s, 3, s],
+        [s, s, 1, s, s, s, s, 6, 8],
+        [s, s, 8, 5, s, s, s, 1, s],
+        [s, 9, s, s, s, s, 4, s, s],
+    ],
+    'almostZero': [
+        [s, s, s, s, s, s, s, s, s],
+        [s, s, s, s, s, s, s, s, s],
+        [s, s, s, s, s, s, s, s, s],
+        [s, s, s, s, s, s, s, s, s],
+        [s, s, s, s, s, s, s, s, s],
+        [s, s, s, s, s, 2, s, s, s],
+        [s, s, s, s, s, s, s, s, s],
+        [s, s, s, s, s, s, s, s, s],
+        [s, s, s, s, s, s, s, s, s],
+    ],
+    'zero': [
+        [s, s, s, s, s, s, s, s, s],
+        [s, s, s, s, s, s, s, s, s],
+        [s, s, s, s, s, s, s, s, s],
+        [s, s, s, s, s, s, s, s, s],
+        [s, s, s, s, s, s, s, s, s],
+        [s, s, s, s, s, s, s, s, s],
+        [s, s, s, s, s, s, s, s, s],
+        [s, s, s, s, s, s, s, s, s],
+        [s, s, s, s, s, s, s, s, s],
+    ]
+};
 
-const _board2 = [
-    [s, s, s, s, s, s, s, s, s],
-    [s, s, s, s, s, s, s, s, s],
-    [s, s, s, s, s, s, s, s, s],
-    [s, s, s, s, s, s, s, s, s],
-    [s, s, s, s, s, s, s, s, s],
-    [s, s, s, s, s, 2, s, s, s],
-    [s, s, s, s, s, s, s, s, s],
-    [s, s, s, s, s, s, s, s, s],
-    [s, s, s, s, s, s, s, s, s],
-]
-console.time('wts2020')
-sudokuSolver(_board);
-print(_board);
-console.timeEnd('wts2020')
+for (var board in boards) {
+    console.time(board)
+    sudokuSolver(boards[board]);
+    print(boards[board]);
+    console.timeEnd(board)
+    console.log('————————––––––––––––––––––')
+}
+
 
 function isValid(board, row, col, k) {
     for (let i = 0; i < 9; i++) {
