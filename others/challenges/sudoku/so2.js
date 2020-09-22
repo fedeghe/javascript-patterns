@@ -18,28 +18,28 @@ const boards = {
         [s, s, 8, 5, s, s, s, 1, s],
         [s, 9, s, s, s, s, 4, s, s],
     ],
-    'almostZero': [
-        [s, s, s, s, s, s, s, s, s],
-        [s, s, s, s, s, s, s, s, s],
-        [s, s, s, s, s, s, s, s, s],
-        [s, s, s, s, s, s, s, s, s],
-        [s, s, s, s, s, s, s, s, s],
-        [s, s, s, s, s, 2, s, s, s],
-        [s, s, s, s, s, s, s, s, s],
-        [s, s, s, s, s, s, s, s, s],
-        [s, s, s, s, s, s, s, s, s],
-    ],
-    'zero': [
-        [s, s, s, s, s, s, s, s, s],
-        [s, s, s, s, s, s, s, s, s],
-        [s, s, s, s, s, s, s, s, s],
-        [s, s, s, s, s, s, s, s, s],
-        [s, s, s, s, s, s, s, s, s],
-        [s, s, s, s, s, s, s, s, s],
-        [s, s, s, s, s, s, s, s, s],
-        [s, s, s, s, s, s, s, s, s],
-        [s, s, s, s, s, s, s, s, s],
-    ]
+    // 'almostZero': [
+    //     [s, s, s, s, s, s, s, s, s],
+    //     [s, s, s, s, s, s, s, s, s],
+    //     [s, s, s, s, s, s, s, s, s],
+    //     [s, s, s, s, s, s, s, s, s],
+    //     [s, s, s, s, s, s, s, s, s],
+    //     [s, s, s, s, s, 2, s, s, s],
+    //     [s, s, s, s, s, s, s, s, s],
+    //     [s, s, s, s, s, s, s, s, s],
+    //     [s, s, s, s, s, s, s, s, s],
+    // ],
+    // 'zero': [
+    //     [s, s, s, s, s, s, s, s, s],
+    //     [s, s, s, s, s, s, s, s, s],
+    //     [s, s, s, s, s, s, s, s, s],
+    //     [s, s, s, s, s, s, s, s, s],
+    //     [s, s, s, s, s, s, s, s, s],
+    //     [s, s, s, s, s, s, s, s, s],
+    //     [s, s, s, s, s, s, s, s, s],
+    //     [s, s, s, s, s, s, s, s, s],
+    //     [s, s, s, s, s, s, s, s, s],
+    // ]
 };
 
 for (var board in boards) {
@@ -47,7 +47,26 @@ for (var board in boards) {
     sudokuSolver(boards[board]);
     print(boards[board]);
     console.timeEnd(board)
+    // console.log(boards[board].moves)
     console.log('————————––––––––––––––––––')
+}
+
+// in [1, 5]
+function generate(level) {
+    var n = 15 + 5 * level,
+        size = n >= 20 && n <= 40 ? n : 30,
+        arrayOf = (n, fn) => new Array(n).fill('').map((e, i) => fn(e, i)),
+        board = arrayOf(9, () => arrayOf(9, () => s))
+    while(size--) {
+        let r, c, v;
+        do {
+            r = Math.floor(Math.random() * 9)
+            c = Math.floor(Math.random() * 9)
+            v = 1 + Math.floor(Math.random() * 9)
+        } while (!isValid (board, r, c, v) || typeof board[r][c] === 'number');
+        board[r][c] = v;
+    }
+    return board;
 }
 
 
@@ -63,6 +82,7 @@ function isValid(board, row, col, k) {
 }
 
 function sudokuSolver(data) {
+    data.moves = data.moves || {};
     for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++) {
             if (data[i][j] == s) {
@@ -73,6 +93,7 @@ function sudokuSolver(data) {
                     // does not pay in term of time, maybe only in memory
 
                     if (isValid(data, i, j, k)) {
+                        data.moves[`${i}_${j}`] = k;
                         data[i][j] = k;
                         if (sudokuSolver(data)) {
                             return true;
@@ -104,3 +125,12 @@ function print(M) {
     }
     console.log(out)
 }
+
+
+var g = generate(1)
+print(g)
+console.time('generated')
+sudokuSolver(g);
+print(g);
+console.timeEnd('generated')
+console.log('————————––––––––––––––––––')
