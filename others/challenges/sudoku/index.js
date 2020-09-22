@@ -49,8 +49,21 @@ const n = null,
         [n,n,7,  n,n,n,  n,n,n],
     ];
 
+// console.time('init1')
+// var s = new Solver(init1);
+// s.run();
+// s.printSolution()
+// console.timeEnd('init1')
+
+
 console.time('init2')
 var s = new Solver(init2);
 s.run();
 s.printSolution()
 console.timeEnd('init2')
+
+// console.time('init3')
+// var s = new Solver(init3);
+// s.run();
+// s.printSolution()
+// console.timeEnd('init3')

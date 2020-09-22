@@ -11,7 +11,7 @@ function Solver(M, debug) {
 }
 
 Solver.prototype.next = function () {
-    this.M = this.boards.pop()
+    this.M = this.boards.shift()
     this.initP();
     if (this.boards.length) {
         this.run();
@@ -19,6 +19,16 @@ Solver.prototype.next = function () {
         console.log('Impossible to solve')
     }
 };
+
+Solver.prototype.split = function (r, c, possibilities) {
+    var self = this;
+    this.boards.concat(possibilities.map(possibility => {
+        let m = self.M.map(r => r.map(c => Array.isArray(c) ? null : c))
+        m[r][c] = possibility;
+        self.boards.push(m);
+    }))
+    this.next();
+}
 
 Solver.prototype.run = function () {
     let t = true,
@@ -166,16 +176,7 @@ Solver.prototype.solveQuadrant = function () {
 };
 
 
-Solver.prototype.split = function (r, c, possibilities) {
-    var self = this;
-    this.boards.concat(possibilities.map(possibility => {
-        let m = JSON.parse(JSON.stringify(self.M))
-        m[r][c] = possibility;
-        // console.log(m)
-        self.boards.unshift(m);
-    }))
-    this.next();
-}
+
 Solver.prototype.solveGuessing = function () {
     var self = this,
         betterCandidate = this.M.reduce((acc, row, ir) => 
@@ -386,8 +387,6 @@ Solver.prototype.printSolution = function () {
         if ((r+1)%3 === 0) {
             out += `+${new Array(4).join('-------+')}\n`
         }
-
-
     }
     console.log(out)
 }
