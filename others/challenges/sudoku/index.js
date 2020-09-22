@@ -47,7 +47,20 @@ const n = null,
         [n,n,n,  n,n,9,  n,n,n],
         [n,n,n,  n,8,n,  n,n,n],
         [n,n,7,  n,n,n,  n,n,n],
-    ];
+    ],
+    killer = [
+        [n,n,n,  n,n,3,  n,1,n], 
+        [n,n,n,  n,n,8,  6,5,n], 
+        [n,n,n,  n,n,n,  4,n,n],
+
+        [n,n,1,  n,3,7,  n,8,2], 
+        [n,n,n,  n,n,n,  n,n,n], 
+        [n,4,n,  n,9,n,  n,n,n],
+
+        [n,n,n,  8,n,n,  1,6,n], 
+        [n,n,n,  n,n,5,  n,n,7], 
+        [n,n,3,  n,n,n,  n,9,n], 
+    ]
 
 // console.time('init1')
 // var s = new Solver(init1);
@@ -56,14 +69,21 @@ const n = null,
 // console.timeEnd('init1')
 
 
-console.time('init2')
-var s = new Solver(init2);
-s.run();
-s.printSolution()
-console.timeEnd('init2')
+// console.time('init2')
+// var s = new Solver(init2);
+// s.run();
+// s.printSolution()
+// console.timeEnd('init2')
 
 // console.time('init3')
 // var s = new Solver(init3);
 // s.run();
 // s.printSolution()
 // console.timeEnd('init3')
+
+
+console.time('killer')
+var s = new Solver(killer);
+s.run();
+s.printSolution()
+console.timeEnd('killer')
