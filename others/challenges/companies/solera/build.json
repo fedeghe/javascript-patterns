@@ -1,0 +1,4 @@
+{
+	"source/lib.js" : ".",
+	"source/test/*.js" : "test"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "solera",
+  "version": "1.0.0",
+  "description": "Solera test exercise",
+  "bin": {
+    "solera": "bin/solera.js"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Federico Ghedina",
+  "license": "ISC",
+  "dependencies": {
+    "malta": "^3.5.5",
+    "mocha": "^3.3.0"
+  }
+}
