@@ -1,0 +1,29 @@
+Create single page ecommerce application with following guidelines:
+> after opening a page, user sees list of products
+> each product is displayed as:
+    ) Name
+    ) Image
+    ) Price
+    ) “Add to cart” button
+
+After clicking on “Add to cart” button following actions are executed:
+> dummy backend script is notified about user action (this script does not have to store
+  any data, only status reply is required)
+> product is added to cart
+> cart overlay is displayed
+
+Besides list of products, there is a ‘My cart’ button. Clicking on it displays cart
+overlay with all products previously added to cart as:
+> Name
+> Image
+> Price
+> “Remove” button
+
+Product can be removed from cart overlay by clicking on “Remove” button inside cart overlay
+
+Scroll on product list have to load more products via Ajax: infinite scrolling
+
+
+
+HINT: As long as possible, stay with native JavaScript, avoid external libraries, the only exception is jQuery (can be used)
+

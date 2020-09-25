@@ -1,0 +1,8 @@
+.generate-round(@n, @value: 2) when (@value =< @n) {
+    .round@{value} {
+        -moz-border-radius:1px * @value;
+        -webkit-border-radius:1px * @value;
+        border-radius:1px * @value;
+    }
+    .generate-round(@n, (@value + 2));
+}

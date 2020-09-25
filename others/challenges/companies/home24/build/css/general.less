@@ -1,0 +1,38 @@
+body {
+    margin:@bodymargin;
+    font-family: verdana, sans-serif;
+    color:@defaultText;
+}
+h1,h2,h3,h4,h5,h6{font-weight:bold;}
+h1{font-size:24px; line-height:48px; padding:24px 0px 12px;}
+h2{font-size:18px; line-height:36px; padding:18px 0px 9px;}
+h3{font-size:14px; line-height:28px; padding:14px 0px 7px;}
+h4{font-size:12px; line-height:24px; padding:12px 0px 6px;}
+h5{font-size:10px; line-height:20px; padding:10px 0px 5px;}
+h6{font-size:8px; line-height:16px; padding:8px 0px 4px;}
+.rfloat{float:right;}
+.lfloat{float:left;}
+.clearer{
+    clear: both;
+    display: block;
+    zoom: 1;
+    height: 0;
+    font-size: 0;
+    width: 0;
+    line-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    content: ".";
+}
+.generate-round(14);
+
+#loading{
+    width:100%;
+    height:60px;
+    margin: 0 auto;
+    background-image: url(img/spinnerLarge.gif);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    display:none;
+}
+
