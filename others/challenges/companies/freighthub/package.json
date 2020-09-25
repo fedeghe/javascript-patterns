@@ -1,0 +1,17 @@
+{
+  "name": "Freighthub",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Federico Ghedina <federico.ghedina@gmail.com>",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^3.4.2"
+  }
+}
