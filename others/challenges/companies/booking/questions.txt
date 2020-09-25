@@ -1,0 +1,101 @@
+Javascript
+----------
+) scope
+> in javascript scope is at function level, a variabile declared inside a function can be seen only inside the function block
+
+
+) global variables
+are variables that can be seen (and overridden) from anywhere
+
+) closures
+> is a function or reference to a function together with a referencing environment
+# http://lostechies.com/derekgreer/2012/02/17/javascript-closures-explained/
+# http://en.wikipedia.org/wiki/Closure_%28computer_science%29
+# http://www.javascriptkit.com/javatutors/closures.shtml
+
+
+
+
+(mleaks)
+# http://www.ibm.com/developerworks/library/wa-memleak/
+once upon a time mleaks # http://www.javascriptkit.com/javatutors/closuresleak/index.shtml
+but now # http://stackoverflow.com/questions/1999840/javascript-circular-references-and-memory-leaks
+# http://javascript.info/tutorial/memory-leaks
+# http://www.javascriptkit.com/javatutors/closuresleak/index3.shtml
+
+) event delegation
+
+) Explain hoisting in Javascript
+http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+HTML+CSS
+--------
+) what is doctype
+> it is an instruction to the web browser about what version of HTML the page is written in.
+# http://www.oreillynet.com/pub/a/javascript/synd/2001/08/28/doctype.html
+# http://en.wikipedia.org/wiki/Document_type_declaration
+
+) what happens if you don't provide it.
+> An HTML document which lacks a DOCTYPE will be rendered in bugwards compatibility mode, since it is assumed to be an older document which was written before DOCTYPE became widely used.
+# http://nimbupani.com/the-truth-about-doctypes.html
+
+) Diff between display:block, display:inline, display:inline-block.
+> An inline element has no line break before or after it, and it tolerates HTML elements next to it.
+  A block element has some whitespace above and below it and does not tolerate any HTML elements next to it.
+  An inline-block element is placed as an inline element (on the same line as adjacent content), but it behaves as a block element.
+
+
+# http://www.w3schools.com/cssref/pr_class_display.asp
+
+) Diff between position:absolute, position:relative. Other position values? What is the default one?
+static,relative,absolute,fixed
+# http://quirksmode.org/css/css2/position.html
+
+) How to improve page loading speed
+use sprites, minify js and css, reduce request for em with file concatenation (ideally one css one js)
+optimize images
+# http://sixrevisions.com/web-development/decrease-webpage-load-times/
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Business
+--------
+) what is A/B testing?
+a way of delegate a UI/UX decision to users
+split requests to two versions of the same page, and compare conversion rates
+# http://en.wikipedia.org/wiki/A/B_testing
+
+) What are you going to measure on a booking confirmation page?
+conversions
+
+) On page next after confirmation page?
+
+
+x) metrics, monitoring, strategies
+metrics allows to eval downtimecosts (amazon has a DTC > 1K$/s)
+
+
+) How to improve front-end part of booking.com? 
+>	UX
+	1) 
+
+	2) do not let the user choose check-out date value before check-in date (in the selects, the calendar works right) 
+
+	3a) in the result page it seem like You want to hide the price
+
+	3b) not visible a contact for the location selected (wanted?)
+
+	3c) in both list and grind mode the gallery buttons not responds correctly at first click
+
+	4) when the user use more than one checkbox filter (or whatever) show a “reset all filters” button.
+
+	5) too many font sizes, the entire site seem to not follow a clear cute color palette
+	   style can get really better 
+
+	5) the “show map” can get much better, but really better, try to:
+	  > show map for a result, mouse out the baloon, hover it again #FAIL
+	  > show map for a result, click marker, back to result, WTF the map stands for?
+
+) What i would do on my first working day?
