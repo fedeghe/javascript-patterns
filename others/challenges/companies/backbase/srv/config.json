@@ -1,0 +1,6 @@
+{
+	"webroot" : "/Applications/MAMP/htdocs/backbase",
+	"accesspoint" : "index.html",	
+	"free" : ["js", "css", "xml", "xsl"],
+	"port" : 8080
+}
