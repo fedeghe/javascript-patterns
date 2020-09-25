@@ -1,0 +1,33 @@
+/*
+16-10-2013
+basic style
+*/
+body{
+    font-family: verdana, sans-serif;
+}
+
+#list, #description{
+    padding-top:20px
+}
+ul{
+    list-style-type: none;
+    padding:0px;
+    border:0px;
+    margin:0px;
+    float:left;
+    margin-right:20px;
+}
+ul li a{
+    color:#55f;
+}
+.clearer{
+    clear:both;
+    visibility:hidden;
+    height:0px;
+    line-height:0px;
+    font-size:0px;
+}
+p{
+    padding:0px;
+    margin:0px;
+}
