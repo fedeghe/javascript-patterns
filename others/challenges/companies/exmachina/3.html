@@ -1,0 +1,135 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			
+			var Myobj = function(){
+				
+				var that = this;
+				
+				
+				
+				this.obj = arguments[0] || null;
+				this.tpl = arguments[1] || null;
+				this.id_dest = arguments[2] || null;
+				
+				
+
+			};
+			
+				Myobj.prototype.glob = {};
+
+				Myobj.prototype.pre = '$';this.post = '';
+				Myobj.prototype.set_glob = function(glob){ this.glob = glob; };
+				
+				Myobj.prototype.prepend = function(id, html){
+					var n = document.getElementById(id),
+					//create a node
+						child = document.createElement('div');
+					child.innerHTML = html+'';
+       				n.insertBefore(child, n.childNodes[0]);
+				};
+				Myobj.prototype.manageglob = function(html){
+					var that = this;
+					return html.replace(
+						new RegExp( '{G{([a-z]*)}G}', 'gi' ),
+						function(str,S){
+							return that.glob[S];
+						}
+					); 
+				}
+				Myobj.prototype.set = function(tpl){
+					//var r = tpl.match(new RegExp('(.*)var(.*)'));
+					if(tpl === '{G{var}G}'){
+						alert('This is a placeholder reserved for global');
+						return ;
+					}
+					try{
+						var r = tpl.split('var');
+						if(r && r[0] && r[1]){
+							this.pre = r[0];
+							this.post = r[1];
+						}else{
+							throw {message : "pattern non valido ( "+tpl+" )"};
+						}
+					}catch(e){alert(e.message);}
+				};
+				Myobj.prototype.cb = function(S1){ return this[S1]; }; 
+			
+			
+			
+				
+			Myobj.prototype.render = function(){
+				var out = '',
+					reg = new RegExp( this.pre.replace('$','\\\$') + '([a-z]*)' + this.post.replace('$','\\\$'), 'gi' ),
+					that = this;
+				for(var j=0, l=that.obj.length; j<l; j+=1){
+					var t = this.tpl;
+					
+					out += t = t.replace(
+						reg,
+						function(str,S){
+							return that.cb.call(that.obj[j], S);
+						}
+					 );
+				}
+				out = this.manageglob(out);
+				this.prepend(this.id_dest, out);
+			};
+			
+			
+			/****************************************************
+			*
+			*				RUN FIRST OR SECOND
+			*
+			*****************************************************
+			*/
+			var run = 2;
+			
+			switch(run){
+				case 1 : 
+				
+					var Myobj2 = function(){};
+					Myobj2.prototype = new Myobj();
+					var o2 = new Myobj2();
+			
+					o2.obj = [
+							{ "label": "Carne", "price": 20, value : "&#128;" }, 
+							{ "label": "Pesce", "price": 10, value : "&#36;" }, 
+						];
+					o2.tpl = '<div><label title="${label}">${label}</label> : <input type="text" value="${price}" title="in ${value}" />{G{value}G}</div>';
+					o2.id_dest = 'destinazione';
+			
+					o2.set("${var}");
+					o2.set_glob({value: "&#128;"});
+			
+					o2.render = function(){alert('Arrivo, ne`');};
+			
+					window.onload = function(){	o2.render(); };
+				break;
+				
+				case 2 : 
+					var obj = [
+						{ "label": "Carne", "price": 20, value : "&#128;" }, 
+						{ "label": "Pesce", "price": 10, value : "&#36;" }, 
+					];			
+					var o = new Myobj(
+						obj,
+						'<div><label title="${label}">${label}</label> : <input type="text" value="${price}" title="in ${value}" />{G{value}G}</div>',
+						'destinazione'
+					);
+					o.set("${var}");
+					o.set_glob({value: "&#128;"});
+					window.onload = function(){
+						o.render();
+					};
+				break;
+			}
+		</script>
+	
+	</head>
+	<body>
+		<div id="destinazione">
+			<p>Sopra di me l'elenco</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,171 @@
+Devi invocare sempre la stessa funzione con N parametri iniziali fissi ed M
+variabili.  Crea una funzione che ti permetta di fare la stessa cosa ma
+impostando una sola volte i parametri fissi.
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+var set  = function(){
+
+        var fix = arguments,sum=0;
+        for(var i = 0, l= fix.length; i<l; i++){
+            sum+=fix[i];
+        }
+
+        set = function(){
+                
+                var args = arguments, inner_sum=0;
+                for(var i = 0, l= args.length; i<l; i++){
+                    inner_sum+=args[i];
+                }
+
+                // and with actual arguments
+                return inner_sum +sum;
+        };
+};
+
+var t  = set(1,2,3);
+t = set(10,20,30);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var set  = function(){
+        var fix = arguments;
+        return function(){
+                var args = arguments, out='';
+                for(var i = 0, l= args.length; i<l; i++){
+                    out+=fix[i] +''+ args[i];
+                }
+
+                // and with actual arguments
+                return out;
+        };
+};
+
+var t  = set("Mr."," lavora e studia in ");
+var out = t("Federico Ghedina","Exmachina");
+console.debug(out);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var set  = function(){
+        var fix = arguments;
+        return function(){
+                var args = arguments, out='', i=0;
+                while(args[i]){
+                    out+=fix[i] +''+ args[i++];
+                }
+                // and with actual arguments
+                return out;
+        };
+};
+
+var t  = set("Mr."," lavora e studia in ");
+var out = t("Federico Ghedina","Exmachina");
+console.debug(out);
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// VERSIONE HYPER-DUMMY
+var set  = function(){
+        var fix = arguments;
+        return function(){
+                return ([fix[0], arguments[0],fix[1],'in',arguments[1]).join(' ');
+        };
+};
+
+var t  = set("Mr.","lavora e studia");
+var out = t("Federico Ghedina","Exmachina");
+console.debug(out);
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// VERSIONE HYPER-DUMMY
+var set  = function(){
+        var fix = arguments, conjunctions = [];
+        
+        return function(){
+                if( arguments[0] instanceof Array && arguments.length==1 ){
+                	conjunctions = arguments[0];
+                }
+                return ([fix[0], conjunctions[0]?conjunctions[0]:'',  arguments[0],fix[1], conjunctions[1]?conjunctions[1]:''  ,arguments[1] ] ).join(' ');
+        };
+};
+
+var t  = set("Mr.","lavora e studia");
+t(['','in']);
+var out = t("Federico Ghedina","Exmachina");
+console.debug(out);
+
+t(['','a']);
+var out = t("Federico Ghedina","Lugano");
+console.debug(out);
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// VERSIONE HYPER-DUMMY
+var set  = function(){
+        var fix = arguments, conjunctions = [];
+        
+        return function(){
+                if( arguments[0] instanceof Array && arguments.length==1 ){
+                	conjunctions = arguments[0];
+                }
+                return ([fix[0], conjunctions[0]?conjunctions[0]:'',  arguments[0],fix[1], conjunctions[1]?conjunctions[1]:''  ,arguments[1] ] ).join(' ').replace('  ',' ');
+        };
+};
+
+var t  = set("Mr.","lavora e studia");
+t(['','in']);
+var out = t("Federico Ghedina","Exmachina");
+console.debug(out);
+
+t(['','a']);
+var out = t("Federico Ghedina","Lugano");
+console.debug(out);
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// VERSIONE UNDUMMY
+var set  = function(){
+	var tpl = arguments[0];
+	pars = Array.prototype.splice.call(arguments, 1);
+	return function(){
+		var inner_pars = pars.concat(Array.prototype.slice.call(arguments, 0));
+			out=tpl,
+			i=0,
+			l=inner_pars.length;
+		while(i<l){
+			out = out.replace("$"+i, inner_pars[i]); 
+			i+=1;
+		}
+		return out;
+	};
+};
+
+var t  = set("Mr.$0 lavora e studia in $1", "Ghedina");
+
+var out = t();
+console.debug(out);
+var out = t("casa");
+console.debug(out);
+
+

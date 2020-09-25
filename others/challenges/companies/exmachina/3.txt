@@ -1,0 +1,117 @@
+/*
+
+Crea una classe che, dato l'id di un nodo, inserisca come primo figlio del nodo
+gli elementi di un array di oggetti come il seguente:
+
+var obj = [
+ { "label": "Carne",
+   "price": 20
+ }, 
+ { "label": "Pesce",
+   "price": 10
+ }, 
+];
+
+tale per cui ogni elemento inserito rispetti un layout personalizzabile.
+Come markup base da cui partire puoi usare il seguente aggiungendo le parti mancanti:
+
+<html>
+ <body>
+  <div id="destinazione">
+   <p>Sopra di me l'elenco</p>
+  </div>
+ </body>
+</html>
+
+Un plus è inserire una valuta personalizzabile a fianco al prezzo indipendente
+dalla base dati.
+
+*/
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<html>
+	<head>
+		<script type="text/javascript">
+			
+			var Myobj = function(){
+				this.pre = '$';this.post = '';
+				this.obj = arguments[0];
+				this.tpl = arguments[1];
+				this.id_dest = arguments[2];
+				
+				function prepend(id, html){
+					var n = document.getElementById(id),
+					//create a node
+						child = document.createElement('div');
+					child.innerHTML = html+'';
+       				n.insertBefore(child, n.childNodes[0]);
+				}
+				
+				this.set = function(tpl){
+					//var r = tpl.match(new RegExp('(.*)var(.*)'));
+					try{
+						var r = tpl.split('var');
+						if(r && r[0] && r[1]){
+							this.pre = r[0];
+							this.post = r[1];
+						}else{
+							throw {message : "pattern non valido ( "+tpl+" )"};
+						}
+					}catch(e){alert(e.message);}
+				};
+				function cb(S1, o){ return o[S1]; }  
+				function cb2(str,S1){
+					return this.obj[Myobj.prototype.currentindex][S1];
+				}  
+				
+				this.render = function(){
+					var out = '',
+						reg = new RegExp( this.pre.replace('$','\\\$') + '([a-z]*)' + this.post.replace('$','\\\$'), 'gi' );
+
+					for(var j=0, l=this.obj.length; j<l; j+=1){
+						var t = this.tpl;
+						
+						/*
+						out += t = t.replace( reg, function(str, $1){
+							return cb($1, this.obj[j]); }
+						);
+						*/
+						Myobj.prototype.currentindex = j;
+
+						out += t = t.replace( reg, cb2); 
+					}
+					
+					manageglob(out);
+					
+					prepend(this.id_dest, out);
+				};
+			};
+		</script>
+		<script type="text/javascript">
+			var obj = [
+				{ "label": "Carne", "price": 20, value : "&#128;" }, 
+				{ "label": "Pesce", "price": 10, value : "&#36;" }, 
+			];			
+			var o = new Myobj(
+				obj,
+				'<div><label title="${label}">${label}</label> : <input type="text" value="${price}" title="in ${value}" />{{value}}</div>',
+				'destinazione'
+			);
+			o.set("${var}");
+			window.onload = function(){
+				o.render();
+			};
+		</script>
+	</head>
+	<body>
+		<div id="destinazione">
+			<p>Sopra di me l'elenco</p>
+		</div>
+	</body>
+</html>
+

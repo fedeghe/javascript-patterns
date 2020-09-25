@@ -1,0 +1,43 @@
+ESERCIZIO 2
+
+Data la classe Persona crea due classi Uomo e Donna da cui ereditano. Aggiungi
+a Persona un metodo "parla", fai in modo che quando invocato da Uomo e Donna
+vengano aggiunti rispettivamente testi differenti.
+
+Esempio:
+
+uomo.parla("sono un uomo");    // Ciao, sono un uomo.
+donna.parla("sono una donna"); // sono una donna, salve.
+
+
+
+function extend(Child, Parent) {
+	var F = function(){};
+	F.prototype = Parent.prototype;
+	Child.prototype = new F();
+	Child.prototype.constructor = Child;
+	Child.uber = Parent.prototype;
+}
+
+
+function Persona(){
+   throw new Error("Don't call me!");
+};
+Persona.prototype.parla = function(d){
+    this.parla = function(d){return 'Ciao sono una persona, '+d;};
+};
+
+function Uomo(){this.parla = function(d){return 'Ciao, '+d;};}
+function Donna(){this.parla = function(d){return d+', salve';};}
+extend(Uomo, Persona);
+extend(Donna, Persona);
+
+var uomo = new Uomo();
+
+var donna = new Donna();
+
+
+var u = uomo.parla("sono un uomo");    // Ciao, sono un uomo.
+var d = donna.parla("sono una donna"); // sono una donna, salve.
+console.debug(u);
+console.debug(d);
