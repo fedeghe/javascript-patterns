@@ -1,0 +1,43 @@
+{
+    "env": {
+     "browser": true,
+     "node": true,
+     "es6": true,
+     "jest": true
+   },
+   "globals": {
+       "appConfig": true,
+       "__LOCAL__": true,
+       "__DEV__": true,
+       "__PROD__": true
+   },
+    "extends": "airbnb-base",
+    "plugins": [
+        "react"
+    ],
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "rules": {
+        "class-methods-use-this": ["error", { "exceptMethods": ["componentWillReceiveProps","componentWillMount"] }],
+        "import/prefer-default-export": "off",
+        "no-multiple-empty-lines": 2,
+        "camelcase": [ 2, { "properties": "always" } ],
+        "consistent-this": 0,
+        "object-shorthand": 2,
+        "comma-dangle": [2, 0],
+        "indent": [2, 4, { "SwitchCase": 1 }],
+        "no-unused-vars": 0,
+        "max-len": ["error", 80],
+        "no-use-before-define": 0,
+        "no-shadow": 0,
+        "key-spacing": [2, { "mode": "minimum" }],
+        "no-unused-expressions": [
+            "error",
+            { "allowShortCircuit": true, "allowTernary": true }
+        ],
+        "import/no-named-as-default": 0
+    }
+}

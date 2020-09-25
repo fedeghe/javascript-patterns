@@ -1,0 +1,165 @@
+/* Add your CSS here. This file should */
+/* automatically hot reload into the app on save */
+/* body{
+    background-color:#444;
+}
+.container {
+    background-color:white;
+    display:flex;
+}
+section.listContainer {
+    border:1px solid red;
+    flex:1;
+}
+section.listBody{
+    height:50vh;
+    overflow:scroll;
+    display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+section.columns-1{
+    flex:1
+}
+section.columns-2{
+    flex:1
+}
+.listItem {
+    padding:10px
+}
+.listItem.selected{
+    border:1px solid #666;
+}
+section.columns-1 .listItem{
+    flex:2;
+}
+section.columns-2 .listItem{
+    flex:1;
+} */
+
+
+
+
+body{
+    color:white;
+    background-color:rgba(26,26,26,.98);
+    padding:1vmax;
+    font-size:10px;
+    font-family:verdana;
+    overflow:hidden
+}
+.container{
+    /* display:flex */
+}
+.container:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.listContainer{
+
+}
+.listContainer.favorites{
+    float:left;
+    width:30vw;
+}
+.listContainer.channels{
+    float:right;
+    width:60vw;
+    
+}
+section{
+    height:90vh;
+    overflow:scroll;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content:flex-start;
+}
+section.columns-1 > div{
+    flex:100%;
+    box-sizing: border-box;
+}
+section.columns-2 > div{
+    flex:50%;
+    box-sizing: border-box;
+}
+div.item{
+    display: inline-block;
+    height:4rem;
+    /* border:1px solid green; */
+    position:relative;
+    line-height:4rem;
+    border:.1rem solid rgba(26,26,26,.98);
+    background-color:#232323;
+    margin-bottom:0.1rem;
+    padding-right:4rem;
+    text-overflow: ellipsis;
+        white-space: nowrap;
+    overflow:hidden
+}
+.item.selected {
+    border:.1rem solid hsla(0,0%,100%,.8);
+    background-color:#373737;
+} 
+.item .num {
+    background-color:#1a1a1a;
+    color:#717171;
+    min-width: 4.27rem;
+    height: 2.33rem;
+    line-height: 2.33rem;
+    text-align:center;
+    -moz-border-radius:.4rem;
+    -webkit-border-radius:.4rem;
+    border-radius:.4rem;
+    top:50%;
+    transform: translateY(-50%);
+
+    font-size:1.8rem;
+    position:absolute;
+    left:1rem;
+}
+.item img {
+    display: inline-block;
+    position:absolute;
+    left:7rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.item .name {
+    position:absolute;
+    left:14rem;
+    font-size:1.4rem;
+    text-transform:uppercase;
+}
+.item:after {
+    content: "☆";
+    font-family: Verdana;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #fff;
+    font-size: 18px;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+.item.fav:after{
+    content: "★";
+}
+h2.title{
+    text-align:center;
+    font-size:2rem;
+}
+@media only screen and (max-width: 900px) {
+    .listContainer.channels, .listContainer.favorites{
+        float:none;;;
+        width:100%;
+    }
+    body{
+        overflow:auto
+    }
+}
