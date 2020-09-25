@@ -1,0 +1,631 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fields",
+				"fieldsNs"
+			],
+			[
+				"animate",
+				"animate(el, prop, to, delta, cb)	fx.js"
+			],
+			[
+				"bo",
+				"body()	jmvc.js"
+			],
+			[
+				"obj",
+				"obj2css(o)	jmvc.js"
+			],
+			[
+				"replace",
+				"replaceall(tpl, o, dD, Dd, cb)	jmvc.js"
+			],
+			[
+				"append",
+				"append(where, what)	jmvc.js"
+			],
+			[
+				"list",
+				"list()	scheduler.js"
+			],
+			[
+				"dela",
+				"delall()	cookie.js"
+			],
+			[
+				"cha",
+				"charToEntity  (variable)"
+			],
+			[
+				"rand",
+				"rand(min, max)	proto.js"
+			],
+			[
+				"op",
+				"op(a, op)	jmvc.js"
+			],
+			[
+				"ran",
+				"random  (function)"
+			],
+			[
+				"A-z",
+				"a-zA-Z"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"JMVC_",
+				"JMVC_PACKED"
+			],
+			[
+				"getSe",
+				"getSeconds  (function)"
+			],
+			[
+				"list-style-",
+				"list-style-type:   (property)"
+			],
+			[
+				"default",
+				"defaultlang  (variable)"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"add",
+				"addscript  (function)"
+			],
+			[
+				"font-s",
+				"font-style"
+			],
+			[
+				"tr",
+				"try  (keyword)"
+			],
+			[
+				"overflow-",
+				"overflow-y:   (property)"
+			],
+			[
+				"crea",
+				"create(tag, attrs, inner)	jmvc.js"
+			],
+			[
+				"addS",
+				"addstyle  (function)"
+			],
+			[
+				"un",
+				"unbind(el, tipo)	jmvc.js"
+			],
+			[
+				"getT",
+				"getType  (function)"
+			],
+			[
+				"bin",
+				"bind(el,tipo,fun)	jmvc.js"
+			],
+			[
+				"create",
+				"create(tag, attrs, inner)	jmvc.js"
+			],
+			[
+				"for",
+				"forEach(f, self, i)	object.js"
+			],
+			[
+				"cre",
+				"create(tag, attrs, inner)	jmvc.js"
+			],
+			[
+				"app",
+				"append(where, what)	jmvc.js"
+			],
+			[
+				"buil",
+				"buildStrategy(f)	List.js"
+			],
+			[
+				"W",
+				"Wcave"
+			],
+			[
+				"fun",
+				"function"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"mini",
+				"Minify Javascript to file"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 602.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Applications/MAMP/htdocs/backbase/index.html",
+		"/Applications/MAMP/htdocs/backbase/js/script.js",
+		"/Applications/MAMP/htdocs/backbase/js/list.js",
+		"/Applications/MAMP/htdocs/backbase/js/xslt.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/helpers/input/integerInput.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/helpers/input/floatInput.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/editor.css",
+		"/Applications/MAMP/htdocs/project_jmvc/index.html",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/tools/dots_random.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/tools/fur_neighbour.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/tools/neighbour_points.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/tools/timespray.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/tools/timesprayround.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/helpers/input/require.json",
+		"/Applications/MAMP/htdocs/project_jmvc/app/views/vacuum.html",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/helpers/optionsManager.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/demo.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/canvaseditor.js",
+		"/Applications/MAMP/htdocs/project_jmvc/build/src/core/innerjmvc.js",
+		"/Applications/MAMP/htdocs/project_jmvc/build/src/core/dispatched.js",
+		"/Applications/MAMP/htdocs/project_jmvc/build/vars.json",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/helpers/panelManager.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/helpers/require.json",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/helpers/layerManager.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/helpers/optionsHelper.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/helpers/layerHelper.js",
+		"/Applications/MAMP/htdocs/project_jmvc/srv/server.js",
+		"/Applications/MAMP/htdocs/project_jmvc/build/src/modules/dom.js",
+		"/Applications/MAMP/htdocs/project_jmvc/build/src/modules/util.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/widget/divrot/divrot_aberrate.css",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/widget/divrot2/divrot.css",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/widget/divrot2/divrot.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/editor.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/helpers/loader.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/widget/divrot/divrot.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/widget/divrot/divrot.css",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/widget/divrot/orig_divrot.css",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/css/css.js",
+		"/Applications/MAMP/htdocs/project_jmvc/build/src/core/init.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/games/wcave/wcave.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/helpers/input/colorpicker.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/helpers/panelHelper.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/_editor.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/canvas.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/toolinterface/toolinterface.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/recommendedCanvasStyle.css",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/require.json",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/helpers/colorpicker.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/helpers/colorlib.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/helpers/web_colorpicker.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/color/color.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/helpers/integerInput.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/helpers/floatInput.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/tools/require.json",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/screen/screen.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/lib/carpet/carpet.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/tools/originals/timespray.js",
+		"/Applications/MAMP/htdocs/project_jmvc/build/src/core/outerjmvc.js",
+		"/Applications/MAMP/htdocs/project_jmvc/build/jmvc.js",
+		"/Applications/MAMP/htdocs/project_jmvc/build/src/core/constructors/functionqueue.js",
+		"/Applications/MAMP/htdocs/project_jmvc/build/src/core/constructors/funcqueue.js",
+		"/Applications/MAMP/htdocs/project_jmvc/build/src/core/constructors/monad.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/lib/image/image.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/tools/originals/dots_random.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/wcave.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/responsive/basic/basic.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/xdoc/xdoc.js",
+		"/Applications/MAMP/htdocs/project_jmvc/build/src/core/render.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/testsuite/testsuite.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/widget/tabs/tabs.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/widget/snow/snow/snow.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/widget/snow/snow.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/widget/modal/modal.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/widget/accordion/accordion.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/vendors/google/analytics/analytics.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/scrollspy/scrollspy.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/iscroll/iscroll.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/lib/math/vector/vector.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/lib/math/matrix/matrix.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/lib/math/dd/dd.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/lib/math/complex/complex.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/lib/jmap/carpet/carpet.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/lib/jmap/jmap.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/lib/border/border.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/lib/bin/bin.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/i18n/i18n.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/fx/fx.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/form/form.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/core/console/console.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/animator/animator.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/affix/affix.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/tabs_1.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/_loading.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/___loading.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/test/widget.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/test/modal.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/test/key.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/test/game.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/test/deque.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/test/date.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/test/crypt.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/test/canvas.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/test/bucket.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/test/array.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/tabs.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/svg.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/gmaps.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/google.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/googlemaps.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/grind.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/index.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/info.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/iscroll.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/jmaps.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/pub.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/snow.js",
+		"/Applications/MAMP/htdocs/project_jmvc/build/src/modules/io.js",
+		"/Applications/MAMP/htdocs/project_jmvc/build/src/core/constructors/interface.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/carpet.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/cubic.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/exm.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/form.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/api.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/brushestools/require.json",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/brushes/require.json",
+		"/Applications/MAMP/htdocs/project_jmvc/app/jmvc.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/controllers/test/interfaces.js",
+		"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor/brushes/neighbour_points.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Applications/MAMP/htdocs/project_jmvc/app/extensions/canvas/editor",
+			"<project>",
+			"/Applications/MAMP/htdocs/project_jmvc/media",
+			"/Applications/MAMP/htdocs/project_jmvc/media/css",
+			"<project>",
+			"/Applications/MAMP/htdocs/project_jmvc",
+			"<project>",
+			"/Applications/MAMP/htdocs/project_jmvc/media/css",
+			"<project>",
+			"/Applications/MAMP/htdocs/project_jmvc/app/controllers",
+			"<project>",
+			"/Applications/MAMP/htdocs/project_jmvc"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"tools",
+			"changeTool",
+			"canvas.editor",
+			"changeTool",
+			"css.attr",
+			"MVC.css.attr",
+			"100px",
+			"-100px",
+			"queueCall",
+			"unbind",
+			"keyup",
+			"el",
+			"flip-card-side-b",
+			"100px",
+			"panel",
+			"changeTool",
+			"use",
+			"layer",
+			"active",
+			"panelTool",
+			"d",
+			"changeTool",
+			"                \n",
+			"animate",
+			"self.cnvId",
+			"points.length",
+			"getScreenSize",
+			"JMVC.require",
+			"require",
+			"JMVC.require",
+			"JMVC_EXT",
+			"factory_method",
+			"interface",
+			"interfa",
+			"tag",
+			"A",
+			"if",
+			"nodeAttrForIndex",
+			"nodeid",
+			"_.events.bindings",
+			"nodeid",
+			"nodeAttrForIndex",
+			"__ownid__",
+			"nodeAttrForIndex",
+			"__own",
+			"cookie",
+			"core/cookie",
+			"'core/cookie'",
+			"var",
+			"ret",
+			"iframe",
+			"navigator",
+			"obj2str",
+			"obj2qs",
+			"toQs",
+			"obj2attr",
+			"obj2css",
+			"obj2attr",
+			"inObject",
+			"objJCompare",
+			"objCompare",
+			"JMVC.util.extend",
+			"flake_sou",
+			"cb",
+			"Dd",
+			"dD",
+			"getElementsByClass",
+			"strRepeat",
+			" '",
+			"replaceall",
+			"reset",
+			"preload",
+			"source",
+			"console",
+			"append",
+			"getPxVector",
+			"console",
+			"preloa",
+			"image",
+			"outDebug",
+			"image",
+			"img",
+			"image",
+			"tipo",
+			"a",
+			"where",
+			"scheduler",
+			"dat",
+			"evnt",
+			"repeat",
+			"create",
+			"create :",
+			"timer",
+			"create : ",
+			" [].",
+			"that",
+			"hooks",
+			"Worker",
+			"entities",
+			"jmvcscript",
+			"inArrayRich",
+			"percent",
+			"Math",
+			"inArray",
+			"Estart",
+			"JMVC.events.Estart",
+			"bind([",
+			"plotter.letter",
+			"strRepeat",
+			"checkImplements",
+			"fullscreen",
+			"preview",
+			"get",
+			"JMVC.io.get",
+			"html",
+			"getParameters",
+			"pata-params",
+			"charCode",
+			"f(",
+			"options",
+			"tpl",
+			"scroll",
+			"_status",
+			"tpl",
+			"'index'",
+			"i_say",
+			"html5",
+			"inArray"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"jmvc_xdoc",
+			"JMVC.implement",
+			"JMVC.head.reload",
+			"JMVC.head.denyiXrame",
+			"JMVC.num.",
+			"JMVC.num.num",
+			"JMVC.num.mCeil",
+			"JMVC.num.mFloor",
+			"JMVC.num.mRound",
+			"JMVC.num.pInt",
+			"JMVC.num.pFloat",
+			"JMVC.num.getFloat",
+			"JMVC.num.getNum",
+			"JMVC.object.obj2qs",
+			"JMVC.object.obj2css",
+			"JMVC.object.obj2attr",
+			"JMVC.object.in_object",
+			"JMVC.object.objJCompare",
+			"JMVC.object.objCompare",
+			"JMVC.string.clone",
+			"JMVC.string.str_repeat",
+			"JMVC.string.htmlEntities",
+			"JMVC.string.multireplace",
+			"JMVC.string.replaceall",
+			"JMVC.string.code2str",
+			"JMVC.string.str2code",
+			"JMVC.string.rtrim",
+			"JMVC.string.ltrim",
+			"JMVC.string.trim",
+			"JMVC.string.padme",
+			"JMVC.array.inArrayRich(",
+			"JMVC.array.array_clone(",
+			"JMVC.array.coll2array(",
+			"JMVC.array.inArray(",
+			"' : '"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 196.0
+	},
+	"output.jslint_result_view":
+	{
+		"height": 295.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"dom",
+				"build/src/modules/dom.js"
+			],
+			[
+				"sniff",
+				"app/extensions/core/sniffer/sniffer.js"
+			],
+			[
+				"scri",
+				"js/script.js"
+			],
+			[
+				"wca",
+				"js/wcave.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 296.0,
+	"status_bar_visible": true
+}
