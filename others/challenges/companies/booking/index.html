@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form id="mform">
+    <!-- text box for name -->
+    <input type="text" id="name" />
+    <input type="text" id="email" />
+    <input type="text" id="address" />
+    <!-- text box for email -->
+    <!-- text box for phone -->
+    <!-- button to submit the form -->
+    <input type="submit" value="Submit" />
+</form>
+
+<script>
+
+	function checkEmail(e) {return !!e.match(/(.*)@(.*)\.(.*)/); }
+
+    window.onload= function (){
+    
+        var myform = document.getElementById('mform'),
+            validate;
+        
+			console.debug(myform);
+			
+        validate = function () {
+        
+            var what = Array.prototype.slice.call(arguments),
+                pars,
+                res = true;
+			
+            if (!what.length){
+                throw new Error('noparams given');
+                return false;
+            } else {
+                pars = what[0];
+            }
+            //
+            for (p in pars) {
+                res = {
+                    'nonempty': function (e) {return !!e.value.length; },
+                    'email' : function (e) {return checkEmail(e.value); }
+                }[pars[p]](document.getElementById(p));
+                if (!res){
+                    return false;
+                }
+            }
+            
+            return true;
+        };
+        
+        myform.onsubmit = function (){
+
+			var v = validate({'name':'nonempty','email':'email','address':'nonempty'});
+			console.debug(v);
+			return v;
+		};
+        
+    };
+</script>
+</body>
+</html>
