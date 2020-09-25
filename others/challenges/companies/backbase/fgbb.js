@@ -1,0 +1,9 @@
+$$js/fg/fg.js$$
+$$js/fg/dom.js$$
+$$js/fg/bom.js$$
+$$js/fg/io.js$$
+$$js/fg/events.js$$
+$$js/fg/channel.js$$
+$$js/xslt.js$$
+$$js/list.js$$
+$$js/script.js$$
