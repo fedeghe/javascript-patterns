@@ -70,10 +70,8 @@ function generate(level) {
     }
     // solve
     sudokuSolver(board)
-    print(board)
+    // print(board)
     // remove random
-    console.log(toRemove, n)
-
     while(toRemove) {
         let r = Math.floor(Math.random() * 9),
             c = Math.floor(Math.random() * 9);
