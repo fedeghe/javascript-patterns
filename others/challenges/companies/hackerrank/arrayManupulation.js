@@ -1,9 +1,12 @@
 function arrayManipulation(n, queries) {
-    var a = Array.from({ length: n }, () => 0);
+    var a = Array.from({length:n}, () => 0);
     queries.forEach(query => {
-        for (var i = query[0] - 1, l = query[1]; i < l; i++) {
-            a[i] = a[i] + query[2]
-        }
+      a[query[0]-1] += query[2]
+      a[query[1]] -= query[2]
     })
-    return Math.max.apply(null, a)
-}
+    return a.reduce((acc, el) => {
+      acc.sum += el
+      if (acc.sum > acc.mx) acc.mx = acc.sum
+      return acc
+    }, {sum: 0, mx: 0}).mx
+  }
