@@ -14,7 +14,7 @@ function hourglassSum(arr) {
     }
     for (i = 0; i < s - 1; i++) {
       for (j = 0; j < s - 1; j++) {
-        checkMax(i, j) 
+        checkMax(i, j)
       }
     }
     return max
