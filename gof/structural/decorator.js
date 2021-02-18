@@ -22,8 +22,6 @@ Shield.prototype.hit = function (strength) {
 	console.log('ShiededArmor hit -> ' + this.superArmor.integrity);
 }
 
-
-
 // normal Armor
 // 
 console.log('Normal Armor');
@@ -31,7 +29,6 @@ var a1 = new Armor();
 do{
 	a1.hit(1);
 } while (a1.getDamage() < 10);
-
 
 // with Shield
 console.log('Shielded Armor');
