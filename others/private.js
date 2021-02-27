@@ -5,7 +5,7 @@ function Person (params) {
       console.log('hello ' + who + ', my name is ' + data.name);
     };
     return new _Person(params);
-  }
+}
   
   var p1 = new Person({name:'Jeff'}),
     p2 = new Person({name:'Federico'});
